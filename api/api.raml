@@ -1,0 +1,210 @@
+#%RAML 0.8
+title: rest-component
+baseUri: http://localhost/rest/{version}/{apikey}/
+version: v1
+mediaType: application/json
+baseUriParameters:
+  apikey:
+    type: string
+    description: 
+    example: AF0935572893BE
+
+resourceTypes:
+  - roles:
+      get:
+
+traits:
+  - paged:
+      queryParameters:
+        pages:
+          description: The number of pages to return
+          type: number
+  - sortable:
+      queryParameters:
+        sort:
+          description: Direction of sort
+          type: string
+  - filtered:
+      queryParameters:
+        filter:
+          description: Filter to applay on the search
+          type: string
+
+/login:
+  displayName: Login
+  description: Auth string
+  post:
+    body:
+      application/json:
+        example: |
+          {
+            "user" : "Dalton",
+            "password" : "******"
+          }
+    responses:
+      200:
+        description: Login was correct
+        body:
+          application/json:
+            example: |
+              {
+                "tokenAuth" : "AhAsmnkdfioeSasdSfasd"
+              }
+      400:
+        description: Login was incorrect, please try again
+      401:
+        description: Not authorized
+        headers:
+          WWW-Authenticate:
+            type: string
+            description: user was not authorized
+            example: |
+              WWW-Authenticate: Basic realm="raml2html"
+
+/register:
+  displayName: Register
+  post:
+    body:
+      application/json:
+        example: |
+          {
+            "user" : "Dalton",
+            "password" : "******"
+          }
+    responses:
+      200:
+        description: Login was correct
+        body:
+          application/json:
+            schema: |
+              {
+                "type" : "boolean"
+              }
+            example: |
+              {
+                "registered" : true
+              }
+      400:
+        description: Registration was wrong, please try again.
+        body:
+          application/json:
+            schema: |
+              {
+                "type" : "boolean"
+              }
+            example: |
+              {
+                "registered" : false
+              }              
+/roles:
+  displayName: Roles
+  get:
+    responses:
+      200:
+        description: Roles
+        body:
+          application/json:
+            schema: |
+              { 
+                "type": "array",
+                "items" : "object"
+              }
+      401:
+        description: Not authorized
+        headers:
+          WWW-Authenticate:
+            type: string
+            description: user was not authorized
+            example: |
+              WWW-Authenticate: Basic realm="raml2html"
+
+/applications:
+  displayName: Applications
+  get:
+    is: [paged, sortable, filtered]
+    description: List all applications
+    responses:
+      200:
+        body:
+          application/json:
+            schema: applications
+  post:
+    description: Create a new application
+    body: 
+      binary/octet-stream:
+      multipart/form-data:
+        formParameters:
+          file:
+            description: Tosca File Archetipe
+            required: true
+            type: file
+  /{id}:
+    get:
+      description: Get the application with the id provided.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: application
+    /inputparameters:
+      get:
+        description: Get all needed parameters for the application
+        responses:
+          200:
+            body:
+              application/json:
+                schema: inputparameters
+      post:
+        description: Set the needed parameters for the application. Creates a customization.
+        body:
+          application/json:
+            schema: inputparameters
+
+/customizations:
+  displayName: Customizations
+  get:
+    is: [paged, sortable, filtered]
+    description: List all customizations
+    responses:
+      200:
+        body:
+          application/json:
+            schema: customizations
+  /{id}:
+    get:
+      description: Get the customization with the id provided.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: customization
+    
+schemas:
+  - inputparameters: |
+      {
+        "type" : "array",
+        "items" : [
+          { "type" : "inputparameter" }
+        ]
+      }
+  - inputparameter: |
+      {
+        "name" : "string",
+        "type" : "string"
+      }
+  - applications: |
+      {
+        "type" : "object",
+        "items" : "application"
+      }
+  - application: |
+      {
+      }
+  - customizations: |
+      {
+        "type" : "object",
+        "items" : "customization"
+      }
+  - customization: |
+      {
+      }
