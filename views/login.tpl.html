@@ -1,0 +1,22 @@
+<div class="container">
+    <div id="panelScreen">
+        <div id="form" style="display:block; margin: 50px" >
+            <label>Name:</label>
+            <input ng-model="login.name" />
+            <br />
+            <label>Password:</label>
+            <input type="password" ng-model="login.password" />
+            <br />
+            <br />
+            <button id="Login" ng-click="login.login()" >Login</button>
+        </div>
+    </div>
+</div>
+
+<p>Please log in!</p>
+
+<p><a href="#" ng-click="loginUser()">Log in as user</a></p>
+<p><a href="#" ng-click="loginAdmin()">Log in as admin</a></p>
+
+
+

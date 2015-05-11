@@ -1,5 +1,5 @@
 angular.module('webui', [])
-    .controller('detailServiceController', function(){
+    .controller('DetailServiceCtrl', function(){
 
         this.subscribe = function subscribe() {
             window.alert("Subscribing recived! ");
