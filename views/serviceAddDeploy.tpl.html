@@ -1,3 +1,41 @@
-
-
-<script src="../app/controllers/serviceAddDeployForm.ctrl.js" ></script>
+<div class="fixedWidth">
+    <div class="panelScreen">
+        <div class="header-ScreenLabel">Service Add Deploy Form</div>
+        <div class="serviceDeploy"><span class="mo_text">Service Deploy</span><button type="button" class="crux-Button">Deploy Service</button><button type="button" class="crux-Button">Test Service</button></div>
+        <div class="serviceParameters">
+            <span class="mo_text">Service Parameters</span>
+            <div class="leftPanel">
+                <div class="taylor-Label">Cloud Node:</div>
+                <select class="taylor-ListBox">
+                    <option value="Turin">Turin</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Bucharest">Bucharest</option>
+                </select>
+                <div class="taylor-Label">Operating System:</div>
+                <select class="taylor-ListBox">
+                    <option value="Ubuntu 14.04">Ubuntu 14.04</option>
+                    <option value="CentOS 7">CentOS 7</option>
+                    <option value="CoreOS 1.6">CoreOS 1.6</option>
+                </select>
+                <div class="taylor-Label">Number CPU's:</div>
+                <input type="text" class="taylor-TextBox">
+                <div class="taylor-Label">Disk Space:</div>
+                <input type="text" class="taylor-TextBox">
+                <div class="taylor-Label">Memory RAM:</div>
+                <input type="text" class="taylor-TextBox">
+                <div class="taylor-Label">Bandwith:</div>
+                <input type="text" class="taylor-TextBox">
+                <div class="taylor-Label">URL/Domain:</div>
+                <input type="text" class="taylor-TextBox">
+                <div class="taylor-Label">CSS Skin:</div>
+                <select class="taylor-ListBox">
+                    <option value="BlueSky">BlueSky</option>
+                    <option value="Lemonade">Lemonade</option>
+                    <option value="Violette">Violette</option>
+                </select>
+            </div>
+            <div class="rightPanel"><span class="mo_text">Puppet Files</span><button type="button" class="crux-Button">Upload Puppet</button><input type="text" class="taylor-TextBox"><span class="puppet-checkBox"><input type="checkbox" value="on" id="gwt-uid-1" tabindex="0"><label for="gwt-uid-1">Puppet File 1</label></span><span class="puppet-checkBox"><input type="checkbox" value="on" id="gwt-uid-2" tabindex="0"><label for="gwt-uid-2">Puppet File 2</label></span><span class="puppet-checkBox"><input type="checkbox" value="on" id="gwt-uid-3" tabindex="0"><label for="gwt-uid-3">Puppet File 3</label></span><button type="button" class="crux-Button">Remove Puppet</button></div>
+            <button type="button" class="crux-Button">Save Template</button><button type="button" class="crux-Button">Upload Template</button>
+        </div>
+    </div>
+</div>

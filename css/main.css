@@ -1,0 +1,347 @@
+.productImage {
+    width: 198px;
+    height: 179px;
+    border: 1px solid #ccc;
+    background:
+    url('http://showcase.cruxframework.org/crossdeviceshowcase/29034EAB4F1EC72DEBF099C90A25F689.cache.svg')
+    no-repeat center #eee;
+    background-size: 64px auto;
+}
+
+.productOther {
+    color: #78a32e;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.productName {
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.productOther {
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.productButton {
+    background: #4396c6;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    font-wight: bold;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+/* .crux-StyledPanel,.crux-FileUploader .dropArea,.crux-FileUploader .filePanel,.crux-ScrollBanner */
+/* 	{ */
+/* 	background: #fff; */
+/* 	display: block; */
+/* 	border: solid #c7c7c7 1px; */
+/* 	box-shadow: 0 1px 3px rgba(90, 90, 90, 0.2); */
+/* 	padding: 15px; */
+/* } */
+.gwt-PasswordTextBox {
+    background: #fff;
+    color: #444;
+    padding: 8px 8px;
+    border-radius: 1px;
+    border: 1px solid #92aec8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14) inset;
+    margin-bottom: 10px;
+}
+
+.serviceParametersPanel,.serviceDeploy,.serviceParameters {
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 850px;
+    border: 1px solid #E0E0E0;
+}
+
+.serviceFlavour {
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 800px;
+    border: 1px solid #E0E0E0;
+}
+
+.leftPanel {
+    /* 	padding: 20px; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 50%;
+    display: inline-block;
+}
+
+.rightPanel {
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    width: 50%;
+    border: 1px solid #E0E0E0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*.serviceParametersPanel .taylor-ListBox, .followKPIs*/
+.taylor-ListBox {
+    position: relative;
+    background: #f8f8f8;
+    color: #444;
+    padding: 8px 8px;
+    border-radius: 1px;
+    border: 1px solid #92aec8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    width: 20%;
+}
+
+/*.serviceParametersPanel .taylor-Label, .followKPIs*/
+.taylor-Label {
+    position: relative;
+    display: inline-block;
+    color: #1c5994;
+    text-shadow: 0 1px #fff;
+    margin: 20px;
+    width: 20%;
+    text-align: right;
+}
+
+/*.serviceParametersPanel .taylor-TextBox, .followKPIs*/
+.taylor-TextBox {
+    position: relative;
+    background: #fff;
+    color: #444;
+    padding: 8px 8px;
+    border-radius: 1px;
+    border: 1px solid #92aec8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14) inset;
+    margin-bottom: 10px;
+    width: 20%;
+    vertical-align: bottom;
+}
+
+.leftPanel .taylor-ListBox,.rightPanel .taylor-ListBox {
+    position: relative;
+    background: #f8f8f8;
+    color: #444;
+    padding: 8px 8px;
+    border-radius: 1px;
+    border: 1px solid #92aec8;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    width: 40%;
+}
+
+.leftPanel .taylor-Label,.rightPanel .taylor-Label {
+    position: relative;
+    display: inline-block;
+    color: #1c5994;
+    text-shadow: 0 1px #fff;
+    margin: 20px;
+    width: 40%;
+    text-align: right;
+}
+
+.leftPanel .taylor-TextBox,.rightPanel .taylor-TextBox {
+    position: relative;
+    background: #fff;
+    color: #444;
+    padding: 8px 8px;
+    border-radius: 1px;
+    border: 1px solid #92aec8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14) inset;
+    margin-bottom: 10px;
+    width: 40%;
+    vertical-align: bottom;
+}
+
+.fixedWidth {
+    width: 850px;
+}
+
+.manageOperations,.followKPIs {
+    border: 1px solid #92aec8;
+    padding: 10px;
+    margin: 15px;
+}
+
+.manageOperations .mo_text,.followKPIs .mo_text {
+    text-align: center;
+    margin-top: -22px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    color: #1c5994;
+    background-color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.serviceFlavour .mo_text,.serviceParametersPanel .mo_text,.serviceDeploy .mo_text,.serviceParameters .mo_text,.rightPanel .mo_text
+{
+    text-align: center;
+    margin-top: -35px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+    color: #1c5994;
+    background-color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: absolute;
+    font-weight: bold;
+}
+
+.manageOperations .taylor-Label-Big {
+    position: relative;
+    display: inline-block;
+    color: #1c5994;
+    text-shadow: 0 1px #fff;
+    margin: 20px;
+    width: 60%;
+    text-align: left;
+}
+
+.manageOperations .taylor-Button {
+    width: 20%;
+    margin-top: 10px;
+}
+
+.header-Label {
+    font-size: 38px;
+    color: #1c5994;
+    margin-bottom: 30px;
+}
+
+.innerPanel {
+    padding: 30px;
+    position: relative;
+    width: 850px;
+}
+
+.innerPanel-TextBox {
+    position: relative;
+    background: #fff;
+    color: #444;
+    padding: 8px 8px;
+    border-radius: 1px;
+    border: 1px solid #92aec8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14) inset;
+    margin-bottom: 10px;
+    width: 60%;
+    vertical-align: bottom;
+}
+
+.innerPanel-Button {
+    width: 20%;
+}
+
+.puppet-checkBox {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    text-align: left;
+}
+
+.review-Button {
+    margin: 50px;
+    font-size: xx-large;
+}
+
+.publishService-Form {
+    display: block;
+    margin: 50px;
+}
+
+.header-ScreenLabel {
+    text-align: left;
+    background-color: #E9E9EF;
+    padding: 5px;
+}
+
+.panelScreen {
+    margin-top: 20px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 20px;
+}
+
+.panelVerticalButton{
+    display: inline;
+}
+
+.publish-Library {
+    margin-left: 20px;
+    width: 30%;
+}
+/*
+Syling for the Uplading button.
+*/
+
+
+.publish-upload::-webkit-file-upload-button {
+    visibility: hidden;
+    display: none;
+}
+
+.publish-upload::before {
+    content: 'Select TOSCA file';
+    display: inline-block;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1))
+    #4496c6;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+    border: 1px solid #1a6299;
+    margin: 0 2px;
+    border-radius: 1px;
+    padding: 8px 14px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 100%;
+    color: white;
+}
+
+.publish-upload::before {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.publish-upload:focus::before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.22);
+}
+
+.publish-upload:hover::before {
+    border-color: #084471;
+}
+
+.publish-upload:focus:active::before {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2) inset, 0 0 0 3px
+    rgba(0, 0, 0, 0.12);
+}
+
+.topMenuEntry-Button {
+    width: auto;
+    padding: 10px;
+    color: #fff;
+    text-align: center !important;
+    border-right: 1px solid #1a6299;
+    box-shadow: none !important;
+    background: #4496c6;
+}

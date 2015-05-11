@@ -1,21 +1,215 @@
-    <div class="fixedWidth">
-        <div id="panelScreen">
-            <!--
-            <crux:adaptiveGrid id="grid" width="100%" dataSource="rowCustomizationDataSource" styleName="grid">
-                <crux:largeColumns>
-                    <crux:dataColumn key="instance" label="Name" width="250px"/>
-                    <crux:dataColumn key="status" label="Status" width="150px"/>
-                    <crux:widgetColumn key="actions" label="Edit Instance" width="100px">
-                        <faces:button id="btnOK" text="GO" onSelect="instancesServiceCatalog.ctrl.go"/>
-                    </crux:widgetColumn>
-                </crux:largeColumns>
-                <crux:smallColumns>
-                    <crux:dataColumn key="idApplication" label="ID" width="100px" />
-                    <crux:dataColumn key="idCustomization" label="ID CUSTOM" width="100px" />
-                </crux:smallColumns>
-            </crux:adaptiveGrid>
-            -->
+<div class="fixedWidth">
+    <div class="panelScreen">
+        <div class="header-ScreenLabel">Instances Service Catalog</div>
+        <div class="innerPanel"><button type="button" class="crux-Button innerPanel-Button">Search Service</button><input type="text" class="innerPanel-TextBox"></div>
+        <div class="grid">
+            <div class="crux-Grid" style="overflow: auto; position: relative; zoom: 1; width: 100%;">
+                <div style="position: relative; zoom: 1;">
+                    <table cellspacing="1" cellpadding="0" style="width: 100%;">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <tbody style="width: 100%; height: 100%;">
+                        <tr class="columnHeadersRow row">
+                            <td class="cellWrapper" width="250px" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell columnHeader">
+                                    <div tabindex="0" class="columnSorter">
+                                        <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
+                                        <table cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                            <tr>
+                                                <td align="left" style="vertical-align: middle;">
+                                                    <div class="label">Name</div>
+                                                </td>
+                                                <td align="left" style="vertical-align: middle;">
+                                                    <div class="arrow"> </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell columnHeader">
+                                    <div tabindex="0" class="columnSorter">
+                                        <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
+                                        <table cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                            <tr>
+                                                <td align="left" style="vertical-align: middle;">
+                                                    <div class="label">Status</div>
+                                                </td>
+                                                <td align="left" style="vertical-align: middle;">
+                                                    <div class="arrow"> </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell columnHeader">
+                                    <div tabindex="0" class="columnSorter">
+                                        <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
+                                        <table cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                            <tr>
+                                                <td align="left" style="vertical-align: middle;">
+                                                    <div class="label">Edit Instance</div>
+                                                </td>
+                                                <td align="left" style="vertical-align: middle;">
+                                                    <div class="arrow"> </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: Clear??, created by -Admin- (2015-02-15)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Requested</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: Clear??, created by -Admin- (2015-04-08)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Deleted</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Deleted</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Running</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">To Delete</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Stopped</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Requested</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: TestApp, created by -Admin- (2015-04-10)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Requested</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Instance of: demo_brussels, created by -Admin- (2015-04-14)</div>
+                                </div>
+                            </td>
+                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="width: 100%;">
+                                    <div class="gwt-Label" style="white-space: normal;">Requested</div>
+                                </div>
+                            </td>
+                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-
-<script src="../app/controllers/instancesServiceCatalog.ctrl.js" ></script>
+</div>

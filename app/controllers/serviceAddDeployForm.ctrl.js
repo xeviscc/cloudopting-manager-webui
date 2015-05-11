@@ -1,5 +1,3 @@
-var app = angular.module('webui', []);
-
-app.controller('ServiceAddDeployFormCtrl', function(){
+angular.module('webui').controller('ServiceAddDeployFormCtrl', function(){
 
 });

@@ -1,5 +1,4 @@
-angular.module('webui', [])
-    .controller('RegisterCtrl', function(){
+angular.module('webui').controller('RegisterCtrl', function(){
         this.name;
         this.password;
 

@@ -1,5 +1,3 @@
-var app = angular.module('webui', []);
-
-app.module('webui').controller('ServiceCatalogListCtrl', function(){
+angular.module('webui').controller('ServiceCatalogListCtrl', function(){
 
 });
