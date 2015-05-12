@@ -14,15 +14,17 @@ The WebUi for the CloudOpting manager will allow to:
     - "angular-ui-router": "0.2.14"
     - "lodash": "3.8.0"
 
-## Pre-install (example for Ubuntu)
+## Pre-install (in Ubuntu)
 1. Install git
     1. run `sudo apt-get install git`
 2. Install NPM
     1. run `sudo apt-get install npm`
 3. Install http-server
     1. run `sudo npm install http-server -g`
+4. Install karma
+    1. run `sudo npm install karma-cli -g`
 
-## Install (package.json not yet available)
+## Install (in Ubuntu)
 1. Clone the ropository from github.
      1. run `git clone https://github.com/CloudOpting/cloudopting-manager-webui`
 2. Go to the path.
@@ -33,7 +35,8 @@ The WebUi for the CloudOpting manager will allow to:
      1. run `npm start`
 
 *Note: If the step 4 `npm start` gives the error `/usr/bin/env: node: No such file or directory`
-it maight be needed to symlink it like so `sudo ln -s /usr/bin/nodejs /usr/bin/node`
+it might be needed to symlink it like so `sudo ln -s /usr/bin/nodejs /usr/bin/node`
 
-## Testing
-
+## Testing (in Ubuntu)
+1. Run the test
+     1. run `npm test`
