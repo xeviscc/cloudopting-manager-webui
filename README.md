@@ -17,8 +17,10 @@ The WebUi for the CloudOpting manager will allow to:
 ## Pre-install (example for Ubuntu)
 1. Install git
     1. run `sudo apt-get install git`
-1. Install NPM
+2. Install NPM
     1. run `sudo apt-get install npm`
+3. Install http-server
+    1. run `sudo npm install http-server -g`
 
 ## Install (package.json not yet available)
 1. Clone the ropository from github.
@@ -27,6 +29,11 @@ The WebUi for the CloudOpting manager will allow to:
      1. run `cd cloudopting-manager-webui`
 3. Install the application.
      1. run `npm install`
+4. Run the appliaction.
+     1. run `npm start`
+
+*Note: If the step 4 `npm start` gives the error `/usr/bin/env: node: No such file or directory`
+it maight be needed to symlink it like so `sudo ln -s /usr/bin/nodejs /usr/bin/node`
 
 ## Testing
 
