@@ -8,8 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider){
         state('login',{
             url: '/login',
             templateUrl: 'login.tpl.html',
-            controller: 'LoginCtrl',
-            controllerAs: 'login'
+            controller: 'LoginCtrl'
         }).
         state('register',{
             url: '/register',
@@ -19,12 +18,17 @@ app.config(function($stateProvider, $urlRouterProvider){
         state('detail',{
             url: '/detail',
             templateUrl: 'detail.tpl.html',
-            controller: 'DetailCtrl'
+            controller: 'DetailServiceCtrl'
         }).
         state('publish',{
             url: '/publish',
             templateUrl: 'publish.tpl.html',
-            controller: 'PublishCtrl'
+            controller: 'PublishServiceCtrl'
+        }).
+        state('publish_two',{
+            url: '/publish_two',
+            templateUrl: 'publish_two.tpl.html',
+            controller: 'PublishServiceCtrl'
         }).
         state('serviceCatalogList',{
             url: '/serviceCatalogList',
@@ -62,41 +66,43 @@ app.run(function ($rootScope, $location, AuthenticationService, RoleService, Ses
     'use strict';
 
     // enumerate routes that don't need authentication
-    var routesThatDontRequireAuth = ['/login', '/register'];
-    var routesThatForAdmins = ['/publish', '/subscribeServiceTaylorForm', '/instances'];
+    var routesThatDontRequireAuth = ['/login', '/register', '/error'];
+    var routesThatForAdmins = ['/detaul', '/index', '/instances', '/publish',
+        '/publish_two', '/serviceAddDeploy', '/serviceCatalogList', '/servicesCatalog',
+        '/serviceSubscriberOperate', '/subscribeServiceTaylorForm', '/toscaList'];
     var routesThatForSubscribers = ['/publish'];
     var routesThatForPublishers = ['/subscribeServiceTaylorForm'];
     var routesThatForOperators = ['/instances'];
 
     // check if current location matches route
-    var routeClean = function (route) {
+    var routeClean = function(route) {
         return _.find(routesThatDontRequireAuth,
             function (noAuthRoute) {
                 return _.startsWith(route, noAuthRoute);
             });
     };
-    // check if route requires admin priviledge
+    // check if route requires admin privileges
     var routeAdmin = function(route) {
         return _.find(routesThatForAdmins,
             function (noAuthRoute) {
                 return _.startsWith(route, noAuthRoute);
             });
     };
-    // check if route requires subscriber priviledge
+    // check if route requires subscriber privileges
     var routeSubscriber = function(route) {
         return _.find(routesThatForSubscribers,
             function (noAuthRoute) {
                 return _.startsWith(route, noAuthRoute);
             });
     };
-    // check if route requires publisher priviledge
+    // check if route requires publisher privileges
     var routePublisher = function(route) {
         return _.find(routesThatForPublishers,
             function (noAuthRoute) {
                 return _.startsWith(route, noAuthRoute);
             });
     };
-    // check if route requires operator priviledge
+    // check if route requires operator privileges
     var routeOperator = function(route) {
         return _.find(routesThatForOperators,
             function (noAuthRoute) {
