@@ -1,0 +1,32 @@
+{
+  "name": "web-ui",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Web UI to manage CloudOpting platform",
+  "author": "Xavier Cases Camats <xavier.cases.external@atos.net>",
+  "repository":  {
+    "type": "git",
+    "url": "https://github.com/CloudOpting/cloudopting-manager-webui"
+  },
+  "bugs": {
+    "url": "https://github.com/CloudOpting/cloudopting-manager-webui/issues"
+  },
+  "devDependencies": {
+    "lodash": "latest",
+    "karma-chrome-launcher": "latest",
+    "karma-firefox-launcher": "latest",
+    "karma": "^0.12.31",
+    "karma-jasmine": "0.2.0"
+  },
+
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000",
+
+    "pretest": "npm install",
+    "test": "karma start test/karma.conf.js",
+    "test-single-run": "karma start test/karma.conf.js  --single-run"
+
+  },
+  "license": "MIT"
+}
