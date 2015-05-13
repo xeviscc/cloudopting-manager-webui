@@ -1,10 +1,10 @@
-require.config({
+requirejs.config({
     baseUrl: 'js',
 
     paths: {
         angular: 'libs/angular/angular',
         angular_route: 'libs/angular-route/angular-route',
-        angular_ui_router: 'libs/angular-ui-router/angular-ui-router',
+        angular_ui_router: 'libs/angular-ui-router/release/angular-ui-router',
         lodash: 'libs/lodash/lodash'
     },
     shim: {
