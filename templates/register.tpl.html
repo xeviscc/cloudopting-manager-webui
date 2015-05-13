@@ -1,0 +1,17 @@
+<div class="container">
+    <div id="panelScreen">
+        <form novalidate class="simple-form">
+            Name: <input ng-model="user.name" /><br />
+            Password: <input type="password" ng-model="user.password" /><br />
+            Repeat password: <input type="password" ng-model="user.password_two" /><br />
+            Role:
+            <select>
+                <option ng-repeat="role in roleList">
+                    {{role.Role.name}}
+                </option>
+            </select>
+            <br />
+            <input type="button" ng-click="register(user)" value="Register" />
+        </form>
+    </div>
+</div>

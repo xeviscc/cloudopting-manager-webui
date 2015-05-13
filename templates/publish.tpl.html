@@ -1,0 +1,50 @@
+<div class="fixedWidth">
+    <div class="panelScreen">
+        <div class="header-ScreenLabel">Publish Service</div>
+        <form novalidate class="simple-form">
+            <table class="publishService-Form">
+                <colgroup>
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <td>
+                        Service Name
+                    </td>
+                    <td>
+                        <input type="text" class="gwt-TextBox" autocomplete="off" style="width: 51%;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Service Description
+                    </td>
+                    <td>
+                        <textarea class="gwt-TextArea" style="height: 243px; width: 630px;" ></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+
+                            <input ng-model="file" type="file" class="gwt-TextBox" name="fileUpload" style="width: 51%;" />
+                            <input type="text" class="gwt-TextBox" name="textUpload" style="width: 51%;" />
+                            <input type="button" class="crux-Button" value="Upload Image" />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div>
+                            <button type="button" class="crux-Button" ng-click="saveConfiguration()">Save Configuration</button>
+                            <button type="button" class="crux-Button" ng-click="publishService()" disabled>Publish Service</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

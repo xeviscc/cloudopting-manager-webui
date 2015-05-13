@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebUI</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+<div ng-include="'templates/topMenu.html'"></div>
+
+<div ui-view></div>
+
+<!-- Load "js/main.js" as an entry point -->
+<script src="js/libs/require/require.js" data-main="js/main"></script>
+
+</body>
+</html>
