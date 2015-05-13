@@ -20,10 +20,10 @@
   },
 
   "scripts": {
-    "prestart": "npm install",
+    "prestart": "bower install && npm install",
     "start": "http-server -a localhost -p 8000",
 
-    "pretest": "npm install",
+    "pretest": "bower install && npm install",
     "test": "karma start test/karma.conf.js",
     "test-single-run": "karma start test/karma.conf.js  --single-run"
 
