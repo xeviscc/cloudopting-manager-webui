@@ -134,7 +134,7 @@ define([
                         if (!routeAllowedPublic(to.url) && !AuthenticationService.isLoggedIn()) {
                             // redirect back to login
                             ev.preventDefault();
-                            $location.path('/login');
+                            $location.path('/anonymous');
                         }
                         else if (RoleService.isRoleAdmin(SessionService.currentUser) && !routeAllowAdmin(to.url)) {
                             // redirect to error page

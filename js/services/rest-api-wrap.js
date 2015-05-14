@@ -103,6 +103,123 @@ define(['app'],
                      });
                      */
                 };
+
+                /**
+                 * Method to get the application list applaying filters, and with pagination
+                 * @returns {*}
+                 */
+                restAPI.applicationList = function () {
+                    //FIXME: Fake application list.
+                    var description = 'description description description description description description description description description description description description description description description description description description description description description description description description description description description ';
+                    var applicationList = [
+                        {
+                            Application: {
+                                image: '',
+                                name: 'Agenda',
+                                description: description,
+                                other: 'Agenda is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'MobileID',
+                                description: description,
+                                other: 'MobileID is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'ASIA',
+                                description: description,
+                                other: 'ASIA is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'MIB',
+                                description: description,
+                                other: 'MIB (Base Information Database) is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'Clearo',
+                                description: description,
+                                other: 'Clearo is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'FixThis',
+                                description: description,
+                                other: 'FixThis is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'Transportation System - Corby',
+                                description: description,
+                                other: 'Transportation System - Corby is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'BusPortal - Corby',
+                                description: description,
+                                other: 'BusPortal - Corby is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'Energy Consumption - Corby',
+                                description: description,
+                                other: 'Energy Consumption - Corby is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'Next2Me',
+                                description: description,
+                                other: 'Next2Me is a service that allows to...'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'TestApp',
+                                description: description,
+                                other: 'Test application description'
+                            }
+                        },
+                        {
+                            Application: {
+                                image: '',
+                                name: 'demo_brussels',
+                                description: description,
+                                other: 'This is a demo in burssels'
+                            }
+                        }
+                    ];
+
+                    return applicationList;
+                    /*
+                    return $http({
+                        method: 'JSONP',
+                        url: restBaseURI + LOGIN_METHOD
+                    });
+                    */
+                };
+
+
                 /**
                  * Method to create a new application.
                  * @returns {*}
@@ -125,16 +242,7 @@ define(['app'],
                     });
                 };
 
-                /**
-                 * Method to get the application list applaying filters, and with pagination
-                 * @returns {*}
-                 */
-                restAPI.applicationList = function () {
-                    return $http({
-                        method: 'JSONP',
-                        url: restBaseURI + LOGIN_METHOD
-                    });
-                };
+
 
                 /**
                  * Method to get the application list without pagination
