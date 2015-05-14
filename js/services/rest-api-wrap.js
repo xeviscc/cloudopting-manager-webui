@@ -34,22 +34,36 @@ define(['app'],
                  * Method to do the login to the rest-component.
                  * @returns {*}
                  */
-                restAPI.login = function () {
-                    return $http({
+                restAPI.login = function (user) {
+                    //FIXME: Fake user validation.
+                    if(user.name == 'admin' && user.password == 'admin') {
+                        user.role = 'admin';
+                        return user;
+                    }
+                    return false;
+                    /*
+                    return $http.post({
                         method: 'JSONP',
-                        url: restBaseURI + LOGIN_METHOD
+                        url: restBaseURI + LOGIN_METHOD,
+                        msg: user
                     });
+                    */
                 };
 
                 /**
                  * Method to do the registration to the rest-component.
                  * @returns {*}
                  */
-                restAPI.register = function () {
-                    return $http({
+                restAPI.register = function (user) {
+                    //FIXME: Fake response.
+                    return false;
+                    /*
+                    return $http.post({
                         method: 'JSONP',
-                        url: restBaseURI + REGISTER_METHOD
+                        url: restBaseURI + REGISTER_METHOD,
+                        msg: user
                     });
+                    */
                 };
 
                 /**
@@ -57,7 +71,7 @@ define(['app'],
                  * @returns {*[]}
                  */
                 restAPI.roles = function () {
-                    //Mock role list
+                    //FIXME: Fake role list.
                     var roleList = [
                         {
                             Role: {
@@ -83,9 +97,9 @@ define(['app'],
 
                     return roleList;
                     /*
-                     return $http({
+                     return $http.get({
                      method: 'JSONP',
-                     url: restBaseURI + REGISTER_METHOD
+                     url: restBaseURI + ROLES_METHOD
                      });
                      */
                 };

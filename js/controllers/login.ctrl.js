@@ -1,18 +1,19 @@
-define(['app'],
+define(
+    [
+        'app'
+    ],
     function(app) {
         app.controller('LoginCtrl', ['$scope', '$state', 'AuthenticationService',
                 function ($scope, $state, AuthenticationService) {
-
                     'use strict';
 
                     $scope.login = function (user) {
                         console.log("Initializing login function.");
-                        //Get the user from the Middleware.
-
                         //If exists, check the role.
-                        var b = AuthenticationService.login({name: user.name, password: user.password, role: 'admin'});
+                        var userWithRole = AuthenticationService.login(user);
 
-                        if(b) {
+                        if(userWithRole) {
+                            //Change page
                             $state.go('serviceCatalogList');
                         } else {
                             //If does not exists, show error message.

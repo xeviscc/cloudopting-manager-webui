@@ -12,14 +12,19 @@ define(
                     $scope.roleList = RestApi.roles();
 
                     $scope.register = function (user) {
-                        $log.debug(user);
                         //Check if two passwords match.
-                        if (user.password == user.password_two) {
-                            window.alert("Password incorrect! Type it again");
-                        } else {
-                            $log.debug("IN");
+                        if (user.password !== user.password_two) {
+                            $scope.error="The passowrds does not mathc! Type it again.";
+                        }
+                        else {
                             //Send registration to the server.
-                            //AuthenticationService.login({name: user.name, password: user.password, role: user.role});
+                            var b = RestApi.register(user);
+                            if(b){
+                                $scope.error='';
+                            }
+                            else {
+                                $scope.error="Something went wrong, try in a few minutes.";
+                            }
                         }
                     }
                 }

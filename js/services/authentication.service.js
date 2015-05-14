@@ -1,14 +1,20 @@
-define(['app'],
+define(
+    [
+        'app'
+    ],
     function(app) {
         app.factory('AuthenticationService',
-            function ($http, SessionService) {
+            function($http, SessionService, RestApi) {
                 'use strict';
 
                 return {
                     login: function (user) {
-                        if(user.name == 'admin' && user.password == 'admin') {
-                            // this method could be used to call the API and set the user instead of taking it in the function params
-                            SessionService.currentUser = user;
+                        //Call the rest component to check if the user is valid.
+                        var userWithRole = RestApi.login(user);
+
+                        //if it is valid, save it and return true.
+                        if(userWithRole) {
+                            SessionService.currentUser = userWithRole;
                             return true;
                         }
                         return false;
