@@ -6,8 +6,12 @@ define(['app'],
 
                 return {
                     login: function (user) {
-                        // this method could be used to call the API and set the user instead of taking it in the function params
-                        SessionService.currentUser = user;
+                        if(user.name == 'admin' && user.password == 'admin') {
+                            // this method could be used to call the API and set the user instead of taking it in the function params
+                            SessionService.currentUser = user;
+                            return true;
+                        }
+                        return false;
                     },
 
                     isLoggedIn: function () {

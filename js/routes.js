@@ -80,12 +80,12 @@ define([
         );
 
         app.run(
-            function ($rootScope, $location, AuthenticationService, RoleService, SessionService) {
+            function ($rootScope, $location, $state, AuthenticationService, RoleService, SessionService) {
                 'use strict';
 
                 // enumerate routes that don't need authentication
-                var routesThatDontRequireAuth = ['/login', '/register', '/error'];
-                var routesThatForAdmins = ['/detaul', '/index', '/instances', '/publish',
+                var routesThatForPublic = ['/login', '/register', '/error'];
+                var routesThatForAdmins = ['/detail', '/index', '/instances', '/publish',
                     '/publish_two', '/serviceAddDeploy', '/serviceCatalogList', '/servicesCatalog',
                     '/serviceSubscriberOperate', '/subscribeServiceTaylorForm', '/toscaList'];
                 var routesThatForSubscribers = ['/publish'];
@@ -93,35 +93,35 @@ define([
                 var routesThatForOperators = ['/instances'];
 
                 // check if current location matches route
-                var routeClean = function (route) {
-                    return _.find(routesThatDontRequireAuth,
+                var routeAllowedPublic = function (route) {
+                    return _.find(routesThatForPublic,
                         function (noAuthRoute) {
                             return _.startsWith(route, noAuthRoute);
                         });
                 };
                 // check if route requires admin privileges
-                var routeAdmin = function (route) {
+                var routeAllowAdmin = function (route) {
                     return _.find(routesThatForAdmins,
                         function (noAuthRoute) {
                             return _.startsWith(route, noAuthRoute);
                         });
                 };
                 // check if route requires subscriber privileges
-                var routeSubscriber = function (route) {
+                var routeAllowSubscriber = function (route) {
                     return _.find(routesThatForSubscribers,
                         function (noAuthRoute) {
                             return _.startsWith(route, noAuthRoute);
                         });
                 };
                 // check if route requires publisher privileges
-                var routePublisher = function (route) {
+                var routeAllowPublisher = function (route) {
                     return _.find(routesThatForPublishers,
                         function (noAuthRoute) {
                             return _.startsWith(route, noAuthRoute);
                         });
                 };
                 // check if route requires operator privileges
-                var routeOperator = function (route) {
+                var routeAllowOperator = function (route) {
                     return _.find(routesThatForOperators,
                         function (noAuthRoute) {
                             return _.startsWith(route, noAuthRoute);
@@ -130,27 +130,33 @@ define([
 
                 $rootScope.$on('$stateChangeStart',
                     function (ev, to, toParams, from, fromParams) {
-                        // if route requires auth and user is not logged in
-                        if (!routeClean($location.url()) && !AuthenticationService.isLoggedIn()) {
+
+                        if (!routeAllowedPublic(to.url) && !AuthenticationService.isLoggedIn()) {
                             // redirect back to login
+                            ev.preventDefault();
                             $location.path('/login');
                         }
-                        else if (routeAdmin($location.url()) && !RoleService.validateRoleAdmin(SessionService.currentUser)) {
+                        else if (RoleService.isRoleAdmin(SessionService.currentUser) && !routeAllowAdmin(to.url)) {
                             // redirect to error page
+                            ev.preventDefault();
                             $location.path('/error');
                         }
-                        else if (routeSubscriber($location.url()) && !RoleService.validateRoleSubscriber(SessionService.currentUser)) {
+                        else if (RoleService.isRoleSubscriber(SessionService.currentUser) && !routeAllowSubscriber(to.url)) {
                             // redirect to error page
+                            ev.preventDefault();
                             $location.path('/error');
                         }
-                        else if (routePublisher($location.url()) && !RoleService.validateRolePublisher(SessionService.currentUser)) {
+                        else if (RoleService.isRolePublisher(SessionService.currentUser) && !routeAllowPublisher(to.url)) {
                             // redirect to error page
+                            ev.preventDefault();
                             $location.path('/error');
                         }
-                        else if (routeOperator($location.url()) && !RoleService.validateRoleOperator(SessionService.currentUser)) {
+                        else if (RoleService.isRoleOperator(SessionService.currentUser) && !routeAllowOperator(to.url)) {
                             // redirect to error page
+                            ev.preventDefault();
                             $location.path('/error');
                         }
+
                     }
                 );
             }

@@ -1,7 +1,7 @@
 define(['app'],
     function(app) {
-        app.controller('LoginCtrl', ['$scope', 'AuthenticationService',
-                function ($scope, AuthenticationService) {
+        app.controller('LoginCtrl', ['$scope', '$state', 'AuthenticationService',
+                function ($scope, $state, AuthenticationService) {
 
                     'use strict';
 
@@ -10,9 +10,14 @@ define(['app'],
                         //Get the user from the Middleware.
 
                         //If exists, check the role.
-                        AuthenticationService.login({name: user.name, password: user.password, role: 'admin'});
+                        var b = AuthenticationService.login({name: user.name, password: user.password, role: 'admin'});
 
-                        //If does not exists, show error message.
+                        if(b) {
+                            $state.go('serviceCatalogList');
+                        } else {
+                            //If does not exists, show error message.
+                            $scope.error = "Login incorrect!";
+                        }
                     }
                 }
             ]

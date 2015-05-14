@@ -10,19 +10,19 @@ define(['app'],
                 var operatorRoles = ['operator'];
 
                 return {
-                    validateRoleAdmin: function (currentUser) {
+                    isRoleAdmin: function (currentUser) {
                         return currentUser ? _.contains(adminRoles, currentUser.role) : false;
                     },
 
-                    validateRoleSubscriber: function (currentUser) {
+                    isRoleSubscriber: function (currentUser) {
                         return currentUser ? _.contains(subscriberRoles, currentUser.role) : false;
                     },
 
-                    validateRolePublisher: function (currentUser) {
+                    isRolePublisher: function (currentUser) {
                         return currentUser ? _.contains(publisherRoles, currentUser.role) : false;
                     },
 
-                    validateRoleOperator: function (currentUser) {
+                    isRoleOperator: function (currentUser) {
                         return currentUser ? _.contains(operatorRoles, currentUser.role) : false;
                     }
                 };

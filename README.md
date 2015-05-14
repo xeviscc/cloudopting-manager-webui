@@ -37,6 +37,8 @@ The WebUi for the CloudOpting manager will allow to:
 *Note: If the step 3 `npm start` gives the error `/usr/bin/env: node: No such file or directory`
 it might be needed to symlink it like so `sudo ln -s /usr/bin/nodejs /usr/bin/node`
 
+The default login user/password is: **admin/admin** (role admin)
+
 ## Testing (in Ubuntu)
 1. Run the test (Expected steps 1 and 2 from Install section completed)
      1. run `npm test`
