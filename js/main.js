@@ -5,7 +5,8 @@ requirejs.config({
         angular: 'libs/angular/angular',
         angular_route: 'libs/angular-route/angular-route',
         angular_ui_router: 'libs/angular-ui-router/release/angular-ui-router',
-        lodash: 'libs/lodash/lodash'
+        lodash: 'libs/lodash/lodash',
+        ng_file_upload_all: 'libs/ng-file-upload/ng-file-upload-all'
     },
     shim: {
         angular: {
@@ -21,6 +22,10 @@ requirejs.config({
         },
         lodash: {
             exports: 'lodash'
+        },
+        ng_file_upload_all: {
+            deps: ['angular'],
+            exports: 'ng_file_upload_all'
         }
     },
     deps: [

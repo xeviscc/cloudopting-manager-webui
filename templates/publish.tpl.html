@@ -27,10 +27,13 @@
                     <td></td>
                     <td>
                         <div>
-
-                            <input ng-model="file" type="file" class="gwt-TextBox" name="fileUpload" style="width: 51%;" />
-                            <input type="text" class="gwt-TextBox" name="textUpload" style="width: 51%;" />
-                            <input type="button" class="crux-Button" value="Upload Image" />
+                            Select Image:
+                            <!--ngf-multiple="multiple"-->
+                            <div class="button-upload" ngf-select ng-model="files" >Select File</div>
+                            File:
+                            <ul>
+                                <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
+                            </ul>
                         </div>
                     </td>
                 </tr>
@@ -39,7 +42,7 @@
                     <td>
                         <div>
                             <button type="button" class="crux-Button" ng-click="saveConfiguration()">Save Configuration</button>
-                            <button type="button" class="crux-Button" ng-click="publishService()" disabled>Publish Service</button>
+                            <button type="button" class="crux-Button" ng-click="publishService()" >Publish Service</button>
                         </div>
                     </td>
                 </tr>

@@ -12,10 +12,13 @@
                         <div class="gwt-Label"></div>
                     </td>
                     <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        <div>
-                            <input type="text" class="gwt-TextBox" name="textUpload" >
-                        </div>
-                        <button type="button" class="crux-Button publish-Library">Select TOSCA Archive</button>
+                        Select TOSCA Archive:
+                        <!--ngf-multiple="multiple"-->
+                        <div class="button-upload" ngf-select ng-model="toscaArchive" >Select File</div>
+                        File:
+                        <ul>
+                            <li ng-repeat="t in toscaArchive" style="font:smaller">{{t.name}}</li>
+                        </ul>
                     </td>
                 </tr>
                 <tr>
@@ -31,10 +34,7 @@
                         <div class="gwt-Label"></div>
                     </td>
                     <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        <div>
-                            <input type="text" class="gwt-TextBox" name="textUpload" >
-                        </div>
-                        <button type="button" class="crux-Button publish-Library">Add Item</button>
+                        <div class="button-upload" ngf-select ng-model="contentLib" >Add Item in Library</div>
                     </td>
                 </tr>
                 <tr>
@@ -43,12 +43,11 @@
                     </td>
                     <td class="formEntryLabel" style="display: table-cell; text-align: left;">
                         <div>
-                            <select class="gwt-ListBox" size="6" >
-                                <option value="value">main.css</option>
-                                <option value="value">dumb.sql</option>
-                                <option value="value">custom.properties</option>
-                            </select><br>
-                            <button type="button" class="crux-Button publish-Library">Delete Item</button>
+                            <select ng-model="getContentLibrary" class="gwt-ListBox" size="6" ng-options="c as c for hola in cFiles">
+                                <!--<option ng-repeat="c in contentLib" value="{{c.name}}">{{c.name}}</option>-->
+                            </select>
+                            <br />
+                            <button type="button" class="crux-Button publish-Library" ng-click="deleteLib(c)" >Delete Item in Library</button>
                         </div>
                     </td>
                 </tr>
@@ -59,7 +58,7 @@
                     <td class="formEntryData" style="display: table-cell; text-align: left;">
                         <div>
                             <button type="button" class="crux-Button" ng-click="saveConfiguration()">Save Configuration</button>
-                            <button type="button" class="crux-Button" ng-click="publishService()" disabled>Publish Service</button>
+                            <button type="button" class="crux-Button" ng-click="publishService()">Publish Service</button>
                         </div>
                     </td>
                 </tr>

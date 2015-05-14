@@ -345,3 +345,13 @@ Syling for the Uplading button.
     box-shadow: none !important;
     background: #4496c6;
 }
+
+.button-upload {
+    -moz-appearance: button;
+    /* Firefox */
+    -webkit-appearance: button;
+    /* Safari and Chrome */
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+}
