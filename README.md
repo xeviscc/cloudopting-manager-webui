@@ -23,20 +23,20 @@ The WebUi for the CloudOpting manager will allow to:
     1. run `sudo npm install http-server -g`
 4. Install karma
     1. run `sudo npm install karma-cli -g`
+4. Install bower
+    1. run `sudo npm install bower -g`
 
 ## Install (in Ubuntu)
 1. Clone the ropository from github.
      1. run `git clone https://github.com/CloudOpting/cloudopting-manager-webui`
 2. Go to the path.
      1. run `cd cloudopting-manager-webui`
-3. Install the application.
-     1. run `npm install`
-4. Run the appliaction.
+3. Run the appliaction (The dependences are solved automatically)
      1. run `npm start`
 
-*Note: If the step 4 `npm start` gives the error `/usr/bin/env: node: No such file or directory`
+*Note: If the step 3 `npm start` gives the error `/usr/bin/env: node: No such file or directory`
 it might be needed to symlink it like so `sudo ln -s /usr/bin/nodejs /usr/bin/node`
 
 ## Testing (in Ubuntu)
-1. Run the test
+1. Run the test (Expected steps 1 and 2 from Install section completed)
      1. run `npm test`
