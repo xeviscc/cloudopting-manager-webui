@@ -20,11 +20,11 @@ The WebUi for the CloudOpting manager will allow to:
 2. Install NPM
     1. run `sudo apt-get install npm`
 3. Install http-server
-    1. run `sudo npm install http-server -g`
+    1. run `npm install http-server -g`
 4. Install karma
-    1. run `sudo npm install karma-cli -g`
+    1. run `npm install karma-cli -g`
 4. Install bower
-    1. run `sudo npm install bower -g`
+    1. run `npm install bower -g`
 
 ## Install (in Ubuntu)
 1. Clone the ropository from github.
