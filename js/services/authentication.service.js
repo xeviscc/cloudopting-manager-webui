@@ -15,7 +15,7 @@ define(
                         //if it is valid, save it and return true.
                         if(userWithRole) {
                             SessionService.currentUser = userWithRole;
-                            return true;
+                            return userWithRole;
                         }
                         return false;
                     },

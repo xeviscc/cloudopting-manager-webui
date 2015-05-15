@@ -3,6 +3,7 @@ define(
         'angular',
         'angular_route',
         'angular_ui_router',
+        'angular_cookies',
         'lodash',
         'ng_file_upload_all'
     ],
@@ -10,7 +11,8 @@ define(
         var app = angular.module('webui',
             [
                 'ui.router',
-                'ngFileUpload'
+                'ngFileUpload',
+                'ngCookies'
             ]
         );
 

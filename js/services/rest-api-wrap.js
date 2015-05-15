@@ -247,7 +247,8 @@ define(['app'],
                             image: '',
                             name: 'Agenda',
                             description: description,
-                            other: 'Agenda is a service that allows to...'
+                            other: 'Agenda is a service that allows to...',
+                            id: 1
                         }
                     },
                     {
@@ -255,7 +256,8 @@ define(['app'],
                             image: '',
                             name: 'MobileID',
                             description: description,
-                            other: 'MobileID is a service that allows to...'
+                            other: 'MobileID is a service that allows to...',
+                            id: 2
                         }
                     },
                     {
@@ -263,7 +265,8 @@ define(['app'],
                             image: '',
                             name: 'ASIA',
                             description: description,
-                            other: 'ASIA is a service that allows to...'
+                            other: 'ASIA is a service that allows to...',
+                            id: 3
                         }
                     },
                     {
@@ -271,7 +274,8 @@ define(['app'],
                             image: '',
                             name: 'MIB',
                             description: description,
-                            other: 'MIB (Base Information Database) is a service that allows to...'
+                            other: 'MIB (Base Information Database) is a service that allows to...',
+                            id: 4
                         }
                     },
                     {
@@ -279,7 +283,8 @@ define(['app'],
                             image: '',
                             name: 'Clearo',
                             description: description,
-                            other: 'Clearo is a service that allows to...'
+                            other: 'Clearo is a service that allows to...',
+                            id: 5
                         }
                     },
                     {
@@ -287,7 +292,8 @@ define(['app'],
                             image: '',
                             name: 'FixThis',
                             description: description,
-                            other: 'FixThis is a service that allows to...'
+                            other: 'FixThis is a service that allows to...',
+                            id: 6
                         }
                     },
                     {
@@ -295,7 +301,8 @@ define(['app'],
                             image: '',
                             name: 'Transportation System - Corby',
                             description: description,
-                            other: 'Transportation System - Corby is a service that allows to...'
+                            other: 'Transportation System - Corby is a service that allows to...',
+                            id: 7
                         }
                     },
                     {
@@ -303,7 +310,8 @@ define(['app'],
                             image: '',
                             name: 'BusPortal - Corby',
                             description: description,
-                            other: 'BusPortal - Corby is a service that allows to...'
+                            other: 'BusPortal - Corby is a service that allows to...',
+                            id: 8
                         }
                     },
                     {
@@ -311,7 +319,8 @@ define(['app'],
                             image: '',
                             name: 'Energy Consumption - Corby',
                             description: description,
-                            other: 'Energy Consumption - Corby is a service that allows to...'
+                            other: 'Energy Consumption - Corby is a service that allows to...',
+                            id: 9
                         }
                     },
                     {
@@ -319,7 +328,9 @@ define(['app'],
                             image: '',
                             name: 'Next2Me',
                             description: description,
-                            other: 'Next2Me is a service that allows to...'
+                            other: 'Next2Me is a service that allows to...',
+                            id: 10
+
                         }
                     },
                     {
@@ -327,7 +338,8 @@ define(['app'],
                             image: '',
                             name: 'TestApp',
                             description: description,
-                            other: 'Test application description'
+                            other: 'Test application description',
+                            id: 11
                         }
                     },
                     {
@@ -335,7 +347,8 @@ define(['app'],
                             image: '',
                             name: 'demo_brussels',
                             description: description,
-                            other: 'This is a demo in burssels'
+                            other: 'This is a demo in burssels',
+                            id: 12
                         }
                     }
                 ];

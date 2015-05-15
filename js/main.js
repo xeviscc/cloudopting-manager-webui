@@ -5,6 +5,7 @@ requirejs.config({
         angular: 'libs/angular/angular',
         angular_route: 'libs/angular-route/angular-route',
         angular_ui_router: 'libs/angular-ui-router/release/angular-ui-router',
+        angular_cookies: 'libs/angular-cookies/angular-cookies',
         lodash: 'libs/lodash/lodash',
         ng_file_upload_all: 'libs/ng-file-upload/ng-file-upload-all'
     },
@@ -26,6 +27,10 @@ requirejs.config({
         ng_file_upload_all: {
             deps: ['angular'],
             exports: 'ng_file_upload_all'
+        },
+        angular_cookies: {
+            deps: ['angular'],
+            exports: 'angular_cookies'
         }
     },
     deps: [
@@ -34,6 +39,7 @@ requirejs.config({
         'http.provider',
         'services/authentication.service',
         'services/role.service',
-        'services/session.service'
+        'services/session.service',
+        'services/exceptions'
     ]
 });
