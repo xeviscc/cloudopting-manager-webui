@@ -66,6 +66,11 @@ define([
                         templateUrl: 'templates/instances.tpl.html',
                         controller: 'InstancesServiceCatalogCtrl'
                     }).
+                    state('serviceAddDeployForm', {
+                        url: '/serviceAddDeployForm',
+                        templateUrl: 'templates/serviceAddDeploy.tpl.html',
+                        controller: 'ServiceAddDeployFormCtrl'
+                    }).
                     state('servicesCatalog', {
                         url: '/servicesCatalog',
                         templateUrl: 'templates/servicesCatalog.tpl.html',
@@ -87,7 +92,8 @@ define([
                 var routesThatForPublic = ['/login', '/register', '/error'];
                 var routesThatForAdmins = ['/detail', '/index', '/instances', '/publish',
                     '/publish_two', '/serviceAddDeploy', '/serviceCatalogList', '/servicesCatalog',
-                    '/serviceSubscriberOperate', '/subscribeServiceTaylorForm', '/toscaList'];
+                    '/serviceSubscriberOperate', '/subscribeServiceTaylorForm', '/toscaList',
+                    '/serviceAddDeployForm'];
                 var routesThatForSubscribers = ['/publish'];
                 var routesThatForPublishers = ['/subscribeServiceTaylorForm'];
                 var routesThatForOperators = ['/instances'];
@@ -130,35 +136,31 @@ define([
 
                 $rootScope.$on('$stateChangeStart',
                     function (ev, to, toParams, from, fromParams) {
-
                         if (!routeAllowedPublic(to.url) && !AuthenticationService.isLoggedIn()) {
-                            // redirect back to login
-                            ev.preventDefault();
-                            $location.path('/anonymous');
+                            redirectTo(ev, '/login');
                         }
                         else if (RoleService.isRoleAdmin(SessionService.currentUser) && !routeAllowAdmin(to.url)) {
-                            // redirect to error page
-                            ev.preventDefault();
-                            $location.path('/error');
+                            redirectTo(ev, '/error');
                         }
                         else if (RoleService.isRoleSubscriber(SessionService.currentUser) && !routeAllowSubscriber(to.url)) {
-                            // redirect to error page
-                            ev.preventDefault();
-                            $location.path('/error');
+                            redirectTo(ev, '/error');
                         }
                         else if (RoleService.isRolePublisher(SessionService.currentUser) && !routeAllowPublisher(to.url)) {
-                            // redirect to error page
-                            ev.preventDefault();
-                            $location.path('/error');
+                            redirectTo(ev, '/error');
                         }
                         else if (RoleService.isRoleOperator(SessionService.currentUser) && !routeAllowOperator(to.url)) {
-                            // redirect to error page
-                            ev.preventDefault();
-                            $location.path('/error');
+                            redirectTo(ev, '/error');
                         }
-
                     }
                 );
+
+                //Workaround for redirecting: https://github.com/angular/angular.js/issues/9607
+                var redirectTo = function (ev, location) {
+                    ev.preventDefault();
+                    $rootScope.$evalAsync(function () {
+                        $location.path(location);
+                    });
+                };
             }
         )
     }
