@@ -28,6 +28,8 @@ define(['app'],
                 var APPLICATION_LIST_METHOD = "application/list?page=%s&size=%s&sortBy=%s&sortOrder=%s&filter=%s";
                 var APPLICATION_LIST_UNPAGINATED_METHOD = "application/listunpaginated";
 
+                var INPUT_PARAMETERS_METHOD = 'application/%s/inputparameters'
+
                 var restAPI = {};
 
                 /**
@@ -42,12 +44,12 @@ define(['app'],
                     }
                     return false;
                     /*
-                    return $http.post({
-                        method: 'JSONP',
-                        url: restBaseURI + LOGIN_METHOD,
-                        msg: user
-                    });
-                    */
+                     return $http.post({
+                     method: 'JSONP',
+                     url: restBaseURI + LOGIN_METHOD,
+                     msg: user
+                     });
+                     */
                 };
 
                 /**
@@ -58,12 +60,12 @@ define(['app'],
                     //FIXME: Fake response.
                     return false;
                     /*
-                    return $http.post({
-                        method: 'JSONP',
-                        url: restBaseURI + REGISTER_METHOD,
-                        msg: user
-                    });
-                    */
+                     return $http.post({
+                     method: 'JSONP',
+                     url: restBaseURI + REGISTER_METHOD,
+                     msg: user
+                     });
+                     */
                 };
 
                 /**
@@ -83,20 +85,14 @@ define(['app'],
                 };
 
                 /**
-                 * Method to get the application list applaying filters, and with pagination
+                 * Method to get the application list applying filters, and with pagination
                  * @returns {*}
                  */
-                restAPI.applicationList = function () {
+                restAPI.applicationList = function (page, size, sortBy, sortOrder, filter) {
                     //FIXME: Fake response.
                     return applicationList;
                     /*
-                    return $http({
-                        method: 'JSONP',
-                        url: restBaseURI + APPLICATION_LIST_UNPAGINATED_METHOD
-                    });
-                    */
-                    /*
-                    //Call with filters in the URL!
+                     //Call with filters in the URL!
                      return $http({
                      method: 'JSONP',
                      url: restBaseURI + APPLICATION_LIST_METHOD
@@ -104,6 +100,47 @@ define(['app'],
                      */
                 };
 
+                /**
+                 * FIXME: DELETE THIS METHOD
+                 * Method to get the application list without pagination
+                 * @returns {*}
+                 */
+                restAPI.applicationListUnpaginated = function () {
+                    //FIXME: Fake response.
+                    return applicationList;
+                    /*
+                     return $http({
+                     method: 'JSONP',
+                     url: restBaseURI + APPLICATION_LIST_UNPAGINATED_METHOD
+                     });
+                     */
+                };
+
+                /**
+                 * Method to get the application parameters to be customized.
+                 *
+                 * @returns {*}
+                 */
+                restAPI.inputParameters = function (id) {
+                    //FIXME: Fake response.
+                    return inputParameters;
+                    /*
+                     //Call with filters in the URL!
+                     return $http({
+                     method: 'JSONP',
+                     url: restBaseURI + INPUT_PARAMETERS_METHOD
+                     });
+                     */
+                };
+
+
+                /*************************************
+                 *
+                 * METHODS REVISED ABOVE.
+                 *
+                 * METHODS TO BE REVISED BELOW.
+                 *
+                 *************************************/
 
                 /**
                  * Method to create a new application.
@@ -127,18 +164,6 @@ define(['app'],
                     });
                 };
 
-
-
-                /**
-                 * Method to get the application list without pagination
-                 * @returns {*}
-                 */
-                restAPI.applicationListUnpaginated = function () {
-                    return $http({
-                        method: 'JSONP',
-                        url: restBaseURI + LOGIN_METHOD
-                    });
-                };
 
                 /**
                  * Method to get an application with an ID.
@@ -185,7 +210,12 @@ define(['app'],
                     });
                 };
 
-                //FIXME: Fake data for developing.
+
+                /*************************************
+                 *
+                 * FIXME: Fake data for developing.
+                 *
+                 *************************************/
                 var roleList = [
                     {
                         Role: {
@@ -309,6 +339,51 @@ define(['app'],
                         }
                     }
                 ];
+
+                var inputParameters = {
+                    cloudNodeList: [
+                        {
+                            name: 'Turin',
+                            id: 'Turin'
+                        },
+                        {
+                            name: 'Barcelona',
+                            id: 'Barcelona'
+                        },
+                        {
+                            name: 'Bucharest',
+                            id: 'Bucharest'
+                        }
+                    ],
+                    osList: [
+                        {
+                            name: 'Ubuntu 14.04',
+                            id: 'Ubuntu 14.04'
+                        },
+                        {
+                            name: 'CentOS 7',
+                            id: 'CentOS 7'
+                        },
+                        {
+                            name: 'CoreOS 1.6',
+                            id: 'CoreOS 1.6'
+                        }
+                    ],
+                    skinList: [
+                        {
+                            name: 'BlueSky',
+                            id: 'BlueSky'
+                        },
+                        {
+                            name: 'Lemonade',
+                            id: 'Lemonade'
+                        },
+                        {
+                            name: 'Violette',
+                            id: 'Violette'
+                        }
+                    ]
+                };
 
                 return restAPI;
 

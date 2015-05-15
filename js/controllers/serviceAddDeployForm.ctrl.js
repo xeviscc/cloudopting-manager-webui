@@ -1,59 +1,22 @@
 define(
     [
         'app',
-        'services/rest-api-wrap'
+        'services/rest-api-wrap',
+        'services/application.service'
     ],
     function(app) {
         app.controller('ServiceAddDeployFormCtrl',
-            ['$scope', '$log', 'RestApi',
-                function ($scope, $log, RestApi) {
+            ['$scope', '$log', 'RestApi', 'ApplicationService',
+                function ($scope, $log, RestApi, ApplicationService) {
 
                     //Get information about the specific Service
                     //RestApi.
                     //Call to the middleware to get the roles
-                    $scope.cloudNodeList = [
-                        {
-                            name: 'Turin',
-                            id: 'Turin'
-                        },
-                        {
-                            name: 'Barcelona',
-                            id: 'Barcelona'
-                        },
-                        {
-                            name: 'Bucharest',
-                            id: 'Bucharest'
-                        }
-                    ];
-                    $scope.osList = [
-                        {
-                            name: 'Ubuntu 14.04',
-                            id: 'Ubuntu 14.04'
-                        },
-                        {
-                            name: 'CentOS 7',
-                            id: 'CentOS 7'
-                        },
-                        {
-                            name: 'CoreOS 1.6',
-                            id: 'CoreOS 1.6'
-                        }
-                    ];
-
-                    $scope.skinList = [
-                        {
-                            name: 'BlueSky',
-                            id: 'BlueSky'
-                        },
-                        {
-                            name: 'Lemonade',
-                            id: 'Lemonade'
-                        },
-                        {
-                            name: 'Violette',
-                            id: 'Violette'
-                        }
-                    ];
+                    //ApplicationService.currentApplication.id
+                    var screen = RestApi.inputParameters(1);
+                    $scope.cloudNodeList = screen.cloudNodeList;
+                    $scope.osList = screen.osList;
+                    $scope.skinList = screen.skinList;
 
                     $scope.saveTemplate = function(service) {
                         //Save the template temporarily
