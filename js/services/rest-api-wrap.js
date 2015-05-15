@@ -185,8 +185,6 @@ define(['app'],
                     });
                 };
 
-                return restAPI;
-
                 //FIXME: Fake data for developing.
                 var roleList = [
                     {
@@ -311,6 +309,8 @@ define(['app'],
                         }
                     }
                 ];
+
+                return restAPI;
 
             }
         )

@@ -13,54 +13,45 @@ define(
                     //Call to the middleware to get the roles
                     $scope.cloudNodeList = [
                         {
-                            cloudNode: {
-                                name: 'Turin',
-                                id: 'Turin'
-                            },
-                            cloudNode: {
-                                name: 'Barcelona',
-                                id: 'Barcelona'
-                            },
-                            cloudNode: {
-                                name: 'Bucharest',
-                                id: 'Bucharest'
-                            }
-
+                            name: 'Turin',
+                            id: 'Turin'
+                        },
+                        {
+                            name: 'Barcelona',
+                            id: 'Barcelona'
+                        },
+                        {
+                            name: 'Bucharest',
+                            id: 'Bucharest'
                         }
                     ];
                     $scope.osList = [
                         {
-                            OS: {
-                                name: 'Ubuntu 14.04',
-                                id: 'Ubuntu 14.04'
-                            },
-                            OS: {
-                                name: 'CentOS 7',
-                                id: 'CentOS 7'
-                            },
-                            OS: {
-                                name: 'CoreOS 1.6',
-                                id: 'CoreOS 1.6'
-                            }
-
+                            name: 'Ubuntu 14.04',
+                            id: 'Ubuntu 14.04'
+                        },
+                        {
+                            name: 'CentOS 7',
+                            id: 'CentOS 7'
+                        },
+                        {
+                            name: 'CoreOS 1.6',
+                            id: 'CoreOS 1.6'
                         }
                     ];
 
                     $scope.skinList = [
                         {
-                            skin: {
-                                name: 'BlueSky',
-                                id: 'BlueSky'
-                            },
-                            skin: {
-                                name: 'Lemonade',
-                                id: 'Lemonade'
-                            },
-                            skin: {
-                                name: 'Violette',
-                                id: 'Violette'
-                            }
-
+                            name: 'BlueSky',
+                            id: 'BlueSky'
+                        },
+                        {
+                            name: 'Lemonade',
+                            id: 'Lemonade'
+                        },
+                        {
+                            name: 'Violette',
+                            id: 'Violette'
                         }
                     ];
 
@@ -71,7 +62,8 @@ define(
 
                     $scope.uploadTemplate = function(service) {
                         //Save the template temporarily
-                        //RestApi.customizationCreate();o
+                        //RestApi.customizationCreate(service);
+                        //$scope.message = "Service send successfully!";
                     };
                 }
             ]

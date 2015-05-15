@@ -1,20 +1,23 @@
 <div class="fixedWidth">
     <div class="panelScreen">
         <div class="header-ScreenLabel">Service Add Deploy Form</div>
-        <div class="serviceDeploy"><span class="mo_text">Service Deploy</span><button type="button" class="crux-Button">Deploy Service</button><button type="button" class="crux-Button">Test Service</button></div>
+        <div class="serviceDeploy"><span class="mo_text">Service Deploy</span>
+            <button type="button" class="crux-Button">Deploy Service</button>
+            <button type="button" class="crux-Button">Test Service</button>
+        </div>
         <div class="serviceParameters">
             <span class="mo_text">Service Parameters</span>
             <div class="leftPanel">
                 <div class="taylor-Label">Cloud Node:</div>
                 <select class="taylor-ListBox">
-                    <option ng-repeat="cloud in cloudNodeList" value="{{cloud.cloudNode.id}}">
-                        {{cloud.cloudNode.name}}
+                    <option ng-repeat="cloud in cloudNodeList" value="{{cloud.id}}">
+                        {{cloud.name}}
                     </option>
                 </select>
                 <div class="taylor-Label">Operating System:</div>
                 <select class="taylor-ListBox">
-                    <option ng-repeat="os in osList" value="{{os.OS.id}}">
-                        {{os.OS.name}}
+                    <option ng-repeat="os in osList" value="{{os.id}}">
+                        {{os.name}}
                     </option>
                 </select>
                 <div class="taylor-Label">Number CPU's:</div>
@@ -29,8 +32,8 @@
                 <input type="text" class="taylor-TextBox" ng-model="service.domain">
                 <div class="taylor-Label">CSS Skin:</div>
                 <select class="taylor-ListBox">
-                    <option ng-repeat="s in skinList" value="{{s.skin.id}}">
-                        {{s.skin.name}}
+                    <option ng-repeat="s in skinList" value="{{s.id}}">
+                        {{s.name}}
                     </option>
                 </select>
             </div>
@@ -54,6 +57,7 @@
                 <button type="button" class="crux-Button">Remove Puppet</button>
             </div>
             -->
+            <br />
             <button type="button" class="crux-Button" ng-click="saveTemplate(service)">Save Template</button>
             <button type="button" class="crux-Button" ng-click="uploadTemplate(service)">Upload Template</button>
         </div>
