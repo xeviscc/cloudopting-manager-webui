@@ -109,6 +109,10 @@
     width: 20%;
 }
 
+.label {
+    color: #000;
+}
+
 /*.serviceParametersPanel .taylor-Label, .followKPIs*/
 .taylor-Label {
     position: relative;

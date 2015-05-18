@@ -9,223 +9,26 @@
             <div class="crux-Grid" style="overflow: auto; position: relative; zoom: 1; width: 100%;">
                 <div style="position: relative; zoom: 1;">
                     <table cellspacing="1" cellpadding="0" style="width: 100%;">
-                        <colgroup>
-                            <col>
-                            <col>
-                            <col>
-                        </colgroup>
-                        <tbody style="width: 100%; height: 100%;">
                         <tr class="columnHeadersRow row">
-                            <td class="cellWrapper" width="250px" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell columnHeader">
-                                    <div tabindex="0" class="columnSorter">
-                                        <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
-                                        <table cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                            <tr>
-                                                <td align="left" style="vertical-align: middle;">
-                                                    <div class="label">{{"instances.col.name" | translate}}</div>
-                                                </td>
-                                                <td align="left" style="vertical-align: middle;">
-                                                    <div class="arrow"> </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell columnHeader">
-                                    <div tabindex="0" class="columnSorter">
-                                        <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
-                                        <table cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                            <tr>
-                                                <td align="left" style="vertical-align: middle;">
-                                                    <div class="label">{{"instances.col.status" | translate}}</div>
-                                                </td>
-                                                <td align="left" style="vertical-align: middle;">
-                                                    <div class="arrow"> </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell columnHeader">
-                                    <div tabindex="0" class="columnSorter">
-                                        <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
-                                        <table cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                            <tr>
-                                                <td align="left" style="vertical-align: middle;">
-                                                    <div class="label">{{"instances.col.edit" | translate}}</div>
-                                                </td>
-                                                <td align="left" style="vertical-align: middle;">
-                                                    <div class="arrow"> </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </td>
+                            <th width="250px" align="center" style="vertical-align: middle;">
+                                <div class="label">{{"instances.col.name" | translate}}</div>
+                            </th>
+                            <th width="150px" align="center" style="vertical-align: middle;">
+                                <div class="label">{{"instances.col.status" | translate}}</div>
+                            </th>
+                            <th width="100px" align="center" style="vertical-align: middle;">
+                                <div class="label">{{"instances.col.edit" | translate}}</div>
+                            </th>
                         </tr>
-                        <!-- TODO: We have to iterate!! -->
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: Clear??, created by -Admin- (2015-02-15)</div>
-                                </div>
+                        <tr class="row" ng-repeat="instance in instancesList">
+                            <td width="250px" align="center" style="vertical-align: middle;">
+                                <div class="gwt-Label" style="white-space: normal;">Instance of: {{instance.service_name}}, created by -{{instance.author}}- ({{instance.date}})</div>
                             </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.requested" | translate}}</div>
-                                </div>
+                            <td width="150px" align="center" style="vertical-align: middle;">
+                                <div class="gwt-Label" style="white-space: normal;">{{instance.status}}</div>
                             </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: Clear??, created by -Admin- (2015-04-08)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.deleted" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.deleted" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.running" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.todelete" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.stopped" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: FixThis, created by -Admin- (2015-02-15)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.requested" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: TestApp, created by -Admin- (2015-04-10)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.requested" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Instance of: demo_brussels, created by -Admin- (2015-04-14)</div>
-                                </div>
-                            </td>
-                            <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">{{"instances.status.requested" | translate}}</div>
-                                </div>
-                            </td>
-                            <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
-                                    <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
-                                </div>
+                            <td width="100px" align="center" style="vertical-align: middle;">
+                                <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
                             </td>
                         </tr>
                         </tbody>

@@ -133,6 +133,16 @@ define(['app'],
                      */
                 };
 
+                /**
+                 * TODO: WILL THIS METHOD EXIST OR IT WILL BE TAKEN FROM APPLICATION LIST?¿?
+                 * Method to get the customization list without pagination
+                 * @returns {*}
+                 */
+                restAPI.instancesList = function () {
+                    //FIXME: Fake response.
+                    return instanceList;
+                };
+
 
                 /*************************************
                  *
@@ -248,7 +258,8 @@ define(['app'],
                             name: 'Agenda',
                             description: description,
                             other: 'Agenda is a service that allows to...',
-                            id: 1
+                            id: 1,
+                            status: "Published"
                         }
                     },
                     {
@@ -257,7 +268,8 @@ define(['app'],
                             name: 'MobileID',
                             description: description,
                             other: 'MobileID is a service that allows to...',
-                            id: 2
+                            id: 2,
+                            status: "For Testing"
                         }
                     },
                     {
@@ -266,7 +278,8 @@ define(['app'],
                             name: 'ASIA',
                             description: description,
                             other: 'ASIA is a service that allows to...',
-                            id: 3
+                            id: 3,
+                            status: "For Testing"
                         }
                     },
                     {
@@ -275,7 +288,8 @@ define(['app'],
                             name: 'MIB',
                             description: description,
                             other: 'MIB (Base Information Database) is a service that allows to...',
-                            id: 4
+                            id: 4,
+                            status: "Uploaded"
                         }
                     },
                     {
@@ -284,7 +298,8 @@ define(['app'],
                             name: 'Clearo',
                             description: description,
                             other: 'Clearo is a service that allows to...',
-                            id: 5
+                            id: 5,
+                            status: "Published"
                         }
                     },
                     {
@@ -293,7 +308,8 @@ define(['app'],
                             name: 'FixThis',
                             description: description,
                             other: 'FixThis is a service that allows to...',
-                            id: 6
+                            id: 6,
+                            status: "For Testing"
                         }
                     },
                     {
@@ -302,7 +318,8 @@ define(['app'],
                             name: 'Transportation System - Corby',
                             description: description,
                             other: 'Transportation System - Corby is a service that allows to...',
-                            id: 7
+                            id: 7,
+                            status: "For Testing"
                         }
                     },
                     {
@@ -311,7 +328,8 @@ define(['app'],
                             name: 'BusPortal - Corby',
                             description: description,
                             other: 'BusPortal - Corby is a service that allows to...',
-                            id: 8
+                            id: 8,
+                            status: "Uploaded"
                         }
                     },
                     {
@@ -320,7 +338,8 @@ define(['app'],
                             name: 'Energy Consumption - Corby',
                             description: description,
                             other: 'Energy Consumption - Corby is a service that allows to...',
-                            id: 9
+                            id: 9,
+                            status: "Uploaded"
                         }
                     },
                     {
@@ -329,7 +348,8 @@ define(['app'],
                             name: 'Next2Me',
                             description: description,
                             other: 'Next2Me is a service that allows to...',
-                            id: 10
+                            id: 10,
+                            status: "Published"
 
                         }
                     },
@@ -339,7 +359,8 @@ define(['app'],
                             name: 'TestApp',
                             description: description,
                             other: 'Test application description',
-                            id: 11
+                            id: 11,
+                            status: "Uploaded"
                         }
                     },
                     {
@@ -348,7 +369,8 @@ define(['app'],
                             name: 'demo_brussels',
                             description: description,
                             other: 'This is a demo in burssels',
-                            id: 12
+                            id: 12,
+                            status: "Uploaded"
                         }
                     }
                 ];
@@ -397,6 +419,63 @@ define(['app'],
                         }
                     ]
                 };
+
+                var instanceList = [
+                    {
+                        "service_name": "Clearo",
+                        "author": "Admin",
+                        "date": "2015-02-15",
+                        "status" : "Requested"
+                    },
+                    {
+                        "service_name": "Clearo",
+                        "author": "Admin",
+                        "date": "2015-04-08",
+                        "status" : "Deleted"
+                    },
+                    {
+                        "service_name": "FixThis",
+                        "author": "Admin",
+                        "date": "2015-02-15",
+                        "status" : "Deleted"
+                    },
+                    {
+                        "service_name": "FixThis",
+                        "author": "Admin",
+                        "date": "2015-02-15",
+                        "status" : "Running"
+                    },
+                    {
+                        "service_name": "FixThis",
+                        "author": "Admin",
+                        "date": "2015-02-15",
+                        "status" : "To Delete"
+                    },
+                    {
+                        "service_name": "FixThis",
+                        "author": "Admin",
+                        "date": "2015-02-15",
+                        "status" : "Stopped"
+                    },
+                    {
+                        "service_name": "FixThis",
+                        "author": "Admin",
+                        "date": "2015-02-15",
+                        "status" : "Requested"
+                    },
+                    {
+                        "service_name": "TestApp",
+                        "author": "Admin",
+                        "date": "2015-04-10",
+                        "status" : "Requested"
+                    },
+                    {
+                        "service_name": "demo_brussels",
+                        "author": "Admin",
+                        "date": "2015-04-14",
+                        "status" : "Requested"
+                    }
+                ];
 
                 return restAPI;
 
