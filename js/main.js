@@ -7,7 +7,9 @@ requirejs.config({
         angular_ui_router: 'libs/angular-ui-router/release/angular-ui-router',
         angular_cookies: 'libs/angular-cookies/angular-cookies',
         lodash: 'libs/lodash/lodash',
-        ng_file_upload_all: 'libs/ng-file-upload/ng-file-upload-all'
+        ng_file_upload_all: 'libs/ng-file-upload/ng-file-upload-all',
+        angular_translate: 'libs/angular-translate/angular-translate',
+        angular_translate_loader_static_files: 'libs/angular-translate-loader-static-files/angular-translate-loader-static-files'
     },
     shim: {
         angular: {
@@ -31,7 +33,16 @@ requirejs.config({
         angular_cookies: {
             deps: ['angular'],
             exports: 'angular_cookies'
+        },
+        angular_translate: {
+            deps: ['angular'],
+            exports: 'angular_translate'
+        },
+        angular_translate_loader_static_files: {
+            deps: ['angular', 'angular_translate'],
+            exports: 'angular_translate_loader_static_files'
         }
+
     },
     deps: [
         'app',
@@ -40,6 +51,7 @@ requirejs.config({
         'services/authentication.service',
         'services/role.service',
         'services/session.service',
-        'services/exceptions'
+        'services/exceptions',
+        'translate.provider'
     ]
 });

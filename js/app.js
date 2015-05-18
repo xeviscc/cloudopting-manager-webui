@@ -5,14 +5,17 @@ define(
         'angular_ui_router',
         'angular_cookies',
         'lodash',
-        'ng_file_upload_all'
+        'ng_file_upload_all',
+        'angular_translate',
+        'angular_translate_loader_static_files'
     ],
     function(angular) {
         var app = angular.module('webui',
             [
                 'ui.router',
                 'ngFileUpload',
-                'ngCookies'
+                'ngCookies',
+                'pascalprecht.translate'
             ]
         );
 

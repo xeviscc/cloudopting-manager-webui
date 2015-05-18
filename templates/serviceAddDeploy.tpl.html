@@ -1,41 +1,30 @@
 <div class="fixedWidth">
     <div class="panelScreen">
-        <div class="header-ScreenLabel">Service Add Deploy Form</div>
-        <div class="serviceDeploy"><span class="mo_text">Service Deploy</span>
-            <button type="button" class="crux-Button">Deploy Service</button>
-            <button type="button" class="crux-Button">Test Service</button>
+        <div class="header-ScreenLabel">{{"service.title" | translate}}</div>
+        <div class="serviceDeploy">
+            <span class="mo_text">{{"service.deploy.title" | translate}}</span>
+            <button type="button" class="crux-Button">{{"service.button.deploy" | translate}}</button>
+            <button type="button" class="crux-Button">{{"service.button.test" | translate}}</button>
         </div>
         <div class="serviceParameters">
-            <span class="mo_text">Service Parameters</span>
+            <span class="mo_text">{{"service.params.title" | translate}}</span>
             <div class="leftPanel">
-                <div class="taylor-Label">Cloud Node:</div>
-                <select class="taylor-ListBox">
-                    <option ng-repeat="cloud in cloudNodeList" value="{{cloud.id}}">
-                        {{cloud.name}}
-                    </option>
-                </select>
-                <div class="taylor-Label">Operating System:</div>
-                <select class="taylor-ListBox">
-                    <option ng-repeat="os in osList" value="{{os.id}}">
-                        {{os.name}}
-                    </option>
-                </select>
-                <div class="taylor-Label">Number CPU's:</div>
+                <div class="taylor-Label">{{"service.cloudnode" | translate}}:</div>
+                <select class="taylor-ListBox" ng-model="service.cloudNode" ng-options="cloud.name for cloud in cloudNodeList"></select>
+                <div class="taylor-Label">{{"service.os" | translate}}:</div>
+                <select class="taylor-ListBox" ng-model="service.os" ng-options="os.name for os in osList"></select>
+                <div class="taylor-Label">{{"service.numcpu" | translate}}:</div>
                 <input type="text" class="taylor-TextBox" ng-model="service.cpu">
-                <div class="taylor-Label">Disk Space:</div>
+                <div class="taylor-Label">{{"service.disk" | translate}}:</div>
                 <input type="text" class="taylor-TextBox" ng-model="service.disk">
-                <div class="taylor-Label">Memory RAM:</div>
+                <div class="taylor-Label">{{"service.ram" | translate}}:</div>
                 <input type="text" class="taylor-TextBox" ng-model="service.ram">
-                <div class="taylor-Label">Bandwidth:</div>
+                <div class="taylor-Label">{{"service.bandwidth" | translate}}:</div>
                 <input type="text" class="taylor-TextBox" ng-model="service.bandwidth">
-                <div class="taylor-Label">URL/Domain:</div>
+                <div class="taylor-Label">{{"service.urldomain" | translate}}:</div>
                 <input type="text" class="taylor-TextBox" ng-model="service.domain">
-                <div class="taylor-Label">CSS Skin:</div>
-                <select class="taylor-ListBox">
-                    <option ng-repeat="s in skinList" value="{{s.id}}">
-                        {{s.name}}
-                    </option>
-                </select>
+                <div class="taylor-Label">{{"service.cssskin" | translate}}:</div>
+                <select class="taylor-ListBox" ng-model="service.skin" ng-options="s.name for s in skinList"></select>
             </div>
             <!--
             <div class="rightPanel">
@@ -58,8 +47,8 @@
             </div>
             -->
             <br />
-            <button type="button" class="crux-Button" ng-click="saveTemplate(service)">Save Template</button>
-            <button type="button" class="crux-Button" ng-click="uploadTemplate(service)">Upload Template</button>
+            <button type="button" class="crux-Button" ng-click="saveTemplate(service)">{{"service.button.save" | translate}}</button>
+            <button type="button" class="crux-Button" ng-click="uploadTemplate(service)">{{"service.button.upload" | translate}}</button>
         </div>
     </div>
 </div>

@@ -1,7 +1,9 @@
 <div class="fixedWidth">
     <div class="panelScreen">
-        <div class="header-ScreenLabel">Services Catalog</div>
-        <div class="innerPanel"><button type="button" class="crux-Button innerPanel-Button">Search Service</button><input type="text" class="innerPanel-TextBox"></div>
+        <div class="header-ScreenLabel">{{"services.catalog.title" | translate}}</div>
+        <div class="innerPanel">
+            <button type="button" class="crux-Button innerPanel-Button">{{"services.catalog.button.search" | translate}}</button>
+            <input type="text" class="innerPanel-TextBox"></div>
         <div class="grid">
             <div class="crux-Grid" style="overflow: auto; position: relative; zoom: 1; width: 100%;">
                 <div style="position: relative; zoom: 1;">
@@ -21,7 +23,7 @@
                                             <tbody>
                                             <tr>
                                                 <td align="left" style="vertical-align: middle;">
-                                                    <div class="label">Name</div>
+                                                    <div class="label">{{"services.catalog.col.name" | translate}}</div>
                                                 </td>
                                                 <td align="left" style="vertical-align: middle;">
                                                     <div class="arrow"> </div>
@@ -40,7 +42,7 @@
                                             <tbody>
                                             <tr>
                                                 <td align="left" style="vertical-align: middle;">
-                                                    <div class="label">Status</div>
+                                                    <div class="label">{{"services.catalog.col.status" | translate}}</div>
                                                 </td>
                                                 <td align="left" style="vertical-align: middle;">
                                                     <div class="arrow"> </div>
@@ -59,7 +61,7 @@
                                             <tbody>
                                             <tr>
                                                 <td align="left" style="vertical-align: middle;">
-                                                    <div class="label">Edit Instance</div>
+                                                    <div class="label">{{"services.catalog.col.edit" | translate}}</div>
                                                 </td>
                                                 <td align="left" style="vertical-align: middle;">
                                                     <div class="arrow"> </div>
@@ -71,6 +73,7 @@
                                 </div>
                             </td>
                         </tr>
+                        <!-- TODO Repeated -->
                         <tr class="row">
                             <td width="250px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
@@ -79,11 +82,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Published</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.published" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -94,11 +99,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">For Testing</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.fortesting" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -109,11 +116,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">For Testing</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.fortesting" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -124,11 +133,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Uploaded</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.uploaded" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -139,11 +150,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Published</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.published" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -154,11 +167,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">For Testing</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.fortesting" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -169,11 +184,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">For Testing</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.fortesting" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -184,11 +201,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Published</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.published" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -199,11 +218,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Uploaded</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.uploaded" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -214,11 +235,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Published</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.published" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -229,11 +252,12 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Uploaded</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.uploaded" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button></div>
                             </td>
                         </tr>
                         <tr class="row">
@@ -244,11 +268,13 @@
                             </td>
                             <td width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
                                 <div class="crux-Cell cell" style="width: 100%;">
-                                    <div class="gwt-Label" style="white-space: normal;">Uploaded</div>
+                                    <div class="gwt-Label" style="white-space: normal;">{{"services.catalog.status.uploaded" | translate}}</div>
                                 </div>
                             </td>
                             <td width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;"><button type="button" class="faces-Button">GO</button></div>
+                                <div class="crux-Cell cell" style="white-space: nowrap; overflow: hidden; width: 100%;">
+                                    <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
+                                </div>
                             </td>
                         </tr>
                         </tbody>

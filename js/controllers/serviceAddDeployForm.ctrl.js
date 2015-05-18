@@ -26,7 +26,7 @@ define(
                     {
                         //Show some error or tell user to go and select a Service.
                         //throw Exception!!
-                        throw new WebUIException("Application not present.");
+                        //throw new WebUIException("Application not present.");
                     }
 
                     $scope.saveTemplate = function(service) {

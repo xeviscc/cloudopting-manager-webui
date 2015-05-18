@@ -1,6 +1,6 @@
 <div class="fixedWidth">
     <div class="panelScreen">
-        <div class="header-ScreenLabel">Publish Service</div>
+        <div class="header-ScreenLabel">{{"publish.title" | translate}}</div>
         <form novalidate class="simple-form">
             <table class="publishService-Form">
                 <colgroup>
@@ -9,7 +9,7 @@
                 <tbody>
                 <tr>
                     <td>
-                        Service Name
+                        {{"publish.service.name" | translate}}
                     </td>
                     <td>
                         <input type="text" class="gwt-TextBox" autocomplete="off" style="width: 51%;"/>
@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <td>
-                        Service Description
+                        {{"publish.service.description" | translate}}
                     </td>
                     <td>
                         <textarea class="gwt-TextArea" style="height: 243px; width: 630px;" ></textarea>
@@ -27,10 +27,10 @@
                     <td></td>
                     <td>
                         <div>
-                            Select Image:
+                            {{"publish.service.image" | translate}}:
                             <!--ngf-multiple="multiple"-->
-                            <div class="button-upload" ngf-select ng-model="files" >Select File</div>
-                            File:
+                            <div class="button-upload" ngf-select ng-model="files" >{{"publish.select.file" | translate}}</div>
+                            {{"publish.file" | translate}}:
                             <ul>
                                 <li ng-repeat="f in files" style="font:smaller">{{f.name}}</li>
                             </ul>
@@ -41,8 +41,8 @@
                     <td></td>
                     <td>
                         <div>
-                            <button type="button" class="crux-Button" ng-click="saveConfiguration()">Save Configuration</button>
-                            <button type="button" class="crux-Button" ng-click="publishService()" >Publish Service</button>
+                            <button type="button" class="crux-Button" ng-click="saveConfiguration()">{{"publish.button.save" | translate}}</button>
+                            <button type="button" class="crux-Button" ng-click="publishService()" >{{"publish.button.publish" | translate}}</button>
                         </div>
                     </td>
                 </tr>

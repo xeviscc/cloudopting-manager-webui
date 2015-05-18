@@ -1,6 +1,6 @@
 <div class="fixedWidth">
     <div class="panelScreen">
-        <div class="header-ScreenLabel">Publish Service</div>
+        <div class="header-ScreenLabel">{{"publish.title" | translate}}</div>
         <form target="FormPanel_toscaui_1" action="/rest/proxyAPIService/uploadFile" method="POST">
             <table class="publishService-Form">
                 <colgroup>
@@ -12,10 +12,10 @@
                         <div class="gwt-Label"></div>
                     </td>
                     <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        Select TOSCA Archive:
+                        {{"publish.select.tosca" | translate}}:
                         <!--ngf-multiple="multiple"-->
-                        <div class="button-upload" ngf-select ng-model="toscaArchive" >Select File</div>
-                        File:
+                        <div class="button-upload" ngf-select ng-model="toscaArchive" >{{"publish.select.file" | translate}}</div>
+                        {{"publish.file" | translate}}:
                         <ul>
                             <li ng-repeat="t in toscaArchive" style="font:smaller">{{t.name}}</li>
                         </ul>
@@ -26,7 +26,7 @@
                         <div class="gwt-Label"></div>
                     </td>
                     <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        <div class="gwt-Label">Content Library</div>
+                        <div class="gwt-Label">{{"publish.content.library" | translate}}</div>
                     </td>
                 </tr>
                 <tr>
@@ -34,7 +34,7 @@
                         <div class="gwt-Label"></div>
                     </td>
                     <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        <div class="button-upload" ngf-select ng-model="contentLib" >Add Item in Library</div>
+                        <div class="button-upload" ngf-select ng-model="contentLib" >{{"publish.add.item" | translate}}</div>
                     </td>
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@
                                 <!--<option ng-repeat="c in contentLib" value="{{c.name}}">{{c.name}}</option>-->
                             </select>
                             <br />
-                            <button type="button" class="crux-Button publish-Library" ng-click="deleteLib(c)" >Delete Item in Library</button>
+                            <button type="button" class="crux-Button publish-Library" ng-click="deleteLib(c)" >{{"publish.delete.item" | translate}}</button>
                         </div>
                     </td>
                 </tr>
@@ -57,8 +57,8 @@
                     </td>
                     <td class="formEntryData" style="display: table-cell; text-align: left;">
                         <div>
-                            <button type="button" class="crux-Button" ng-click="saveConfiguration()">Save Configuration</button>
-                            <button type="button" class="crux-Button" ng-click="publishService()">Publish Service</button>
+                            <button type="button" class="crux-Button" ng-click="saveConfiguration()">{{"publish.button.save" | translate}}</button>
+                            <button type="button" class="crux-Button" ng-click="publishService()">{{"publish.button.publish" | translate}}</button>
                         </div>
                     </td>
                 </tr>
