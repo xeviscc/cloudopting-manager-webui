@@ -20,7 +20,9 @@
 
   "instances.title": "Instances Service Catalog",
   "instances.button.search": "Search Service",
-  "instances.col.name": "Name",
+  "instances.col.instanceof": "Instance of",
+  "instances.col.author": "Author",
+  "instances.col.date": "Date",
   "instances.col.status": "Status",
   "instances.col.edit": "Edit Instance",
 
@@ -66,7 +68,7 @@
 
   "services.catalog.title": "Services Catalog",
   "services.catalog.button.search": "Search Service",
-  "services.catalog.col.name": "Name",
+  "services.catalog.col.name": "Service Name",
   "services.catalog.col.status": "Status",
   "services.catalog.col.edit": "Edit Instance",
 

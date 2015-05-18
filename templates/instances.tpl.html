@@ -10,10 +10,16 @@
                 <div style="position: relative; zoom: 1;">
                     <table cellspacing="1" cellpadding="0" style="width: 100%;">
                         <tr class="columnHeadersRow row">
-                            <th width="250px" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"instances.col.name" | translate}}</div>
-                            </th>
                             <th width="150px" align="center" style="vertical-align: middle;">
+                                <div class="label">{{"instances.col.instanceof" | translate}}</div>
+                            </th>
+                            <th width="100px" align="center" style="vertical-align: middle;">
+                                <div class="label">{{"instances.col.author" | translate}}</div>
+                            </th>
+                            <th width="100px" align="center" style="vertical-align: middle;">
+                                <div class="label">{{"instances.col.date" | translate}}</div>
+                            </th>
+                            <th width="100px" align="center" style="vertical-align: middle;">
                                 <div class="label">{{"instances.col.status" | translate}}</div>
                             </th>
                             <th width="100px" align="center" style="vertical-align: middle;">
@@ -21,10 +27,16 @@
                             </th>
                         </tr>
                         <tr class="row" ng-repeat="instance in instancesList">
-                            <td width="250px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">Instance of: {{instance.service_name}}, created by -{{instance.author}}- ({{instance.date}})</div>
-                            </td>
                             <td width="150px" align="center" style="vertical-align: middle;">
+                                <div class="gwt-Label" style="white-space: normal;">{{instance.service_name}}</div>
+                            </td>
+                            <td width="100px" align="center" style="vertical-align: middle;">
+                                <div class="gwt-Label" style="white-space: normal;">{{instance.author}}</div>
+                            </td>
+                            <td width="100px" align="center" style="vertical-align: middle;">
+                                <div class="gwt-Label" style="white-space: normal;">{{instance.date}}</div>
+                            </td>
+                            <td width="100px" align="center" style="vertical-align: middle;">
                                 <div class="gwt-Label" style="white-space: normal;">{{instance.status}}</div>
                             </td>
                             <td width="100px" align="center" style="vertical-align: middle;">

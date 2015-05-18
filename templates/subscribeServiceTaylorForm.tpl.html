@@ -5,9 +5,7 @@
             <span class="mo_text">{{"taylor.params.title" | translate}}</span>
             <div class="taylor-Label">{{"taylor.cloudnode" | translate}}:</div>
             <select class="taylor-ListBox">
-                <option value="Turin">Turin</option>
-                <option value="Barcelona">Barcelona</option>
-                <option value="Bucharest">Bucharest</option>
+                <option ng-repeat="cn in cloudNodeList" value="{{cn.name}}">{{cn.name}}</option>
             </select>
             <div class="taylor-Label">{{"taylor.urldomain" | translate}}:</div>
             <input type="text" class="taylor-TextBox">
@@ -15,15 +13,11 @@
                 <span class="mo_text">{{"taylor.flavour" | translate}}</span>
                 <div class="taylor-Label">{{"taylor.os" | translate}}:</div>
                 <select class="taylor-ListBox">
-                    <option value="Ubuntu 14.04">Ubuntu 14.04</option>
-                    <option value="CentOS 7">CentOS 7</option>
-                    <option value="CoreOS 1.6">CoreOS 1.6</option>
+                    <option ng-repeat="os in osList" value="{{os.name}}">{{os.name}}</option>
                 </select>
                 <div class="taylor-Label">{{"taylor.cssskin" | translate}}:</div>
                 <select class="taylor-ListBox">
-                    <option value="BlueSky">BlueSky</option>
-                    <option value="Lemonade">Lemonade</option>
-                    <option value="Violette">Violette</option>
+                    <option ng-repeat="skin in skinList" value="{{skin.name}}">{{skin.name}}</option>
                 </select>
                 <div class="taylor-Label">{{"taylor.sla" | translate}}:</div>
                 <select class="taylor-ListBox"></select>

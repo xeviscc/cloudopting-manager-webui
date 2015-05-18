@@ -3,7 +3,8 @@
         <div class="header-ScreenLabel">{{"services.catalog.title" | translate}}</div>
         <div class="innerPanel">
             <button type="button" class="crux-Button innerPanel-Button">{{"services.catalog.button.search" | translate}}</button>
-            <input type="text" class="innerPanel-TextBox"></div>
+            <input type="text" class="innerPanel-TextBox">
+        </div>
         <div class="grid">
             <div class="crux-Grid" style="overflow: auto; position: relative; zoom: 1; width: 100%;">
                 <div style="position: relative; zoom: 1;">
@@ -23,7 +24,7 @@
                         </tr>
                         <tr class="row" ng-repeat="app in applicationList">
                             <td width="250px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">Main Service: {{app.Application.name}}</div>
+                                <div class="gwt-Label" style="white-space: normal;">{{app.Application.name}}</div>
                             </td>
                             <td width="150px" align="center" style="vertical-align: middle;">
                                 <div class="gwt-Label" style="white-space: normal;">{{app.Application.status}}</div>
