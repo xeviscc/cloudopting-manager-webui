@@ -4,17 +4,18 @@ define(
         'services/rest-api-wrap'
     ],
     function(app) {
-        app.controller('RegisterCtrl', ['$scope', '$log', 'AuthenticationService', 'RestApi',
-                function ($scope, $log, AuthenticationService, RestApi) {
+        app.controller('RegisterCtrl',
+            ['$scope', '$translate', '$log', 'AuthenticationService', 'RestApi',
+                function ($scope, $translate, $log, AuthenticationService, RestApi) {
                     'use strict';
 
                     //Call to the middleware to get the roles
                     $scope.roleList = RestApi.roles();
 
                     $scope.register = function (user) {
-                        //Check if two passwords match.
+                        //Check if the two passwords match.
                         if (user.password !== user.password_two) {
-                            $scope.error="The passowrds does not mathc! Type it again.";
+                            $scope.error = $translate.instant('register.error.password');
                         }
                         else {
                             //Send registration to the server.
@@ -23,7 +24,7 @@ define(
                                 $scope.error='';
                             }
                             else {
-                                $scope.error="Something went wrong, try in a few minutes.";
+                                $scope.error = $translate.instant('register.error.unknown');
                             }
                         }
                     }

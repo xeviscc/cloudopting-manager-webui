@@ -3,7 +3,8 @@ define(
         'app'
     ],
     function(app) {
-        app.controller('LoginCtrl', ['$cookies', '$scope', '$state', 'AuthenticationService',
+        app.controller('LoginCtrl',
+            ['$cookies', '$scope', '$state', 'AuthenticationService',
                 function ($cookies, $scope, $state, AuthenticationService) {
                     'use strict';
 
@@ -29,7 +30,7 @@ define(
                             $state.go('serviceCatalogList');
                         } else {
                             //If does not exists, show error message.
-                            $scope.error = "Login incorrect!";
+                            $scope.error = $translate.instant('login.error');
                         }
                     }
                 }

@@ -9,10 +9,14 @@
   "register.repeatpassword": "Repeat password",
   "register.role": "Role",
   "register.button": "Register",
+  "register.error.password": "The passwords does not match! Type it again.",
+  "register.error.unknown": "Something went wrong, try in a few minutes.",
 
   "login.name": "Name",
   "login.password": "Password",
   "login.button": "Login",
+  "login.error": "Login incorrect!",
+
 
   "instances.title": "Instances Service Catalog",
   "instances.button.search": "Search Service",
