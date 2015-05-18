@@ -4,8 +4,8 @@ define(
     ],
     function(app) {
         app.controller('LoginCtrl',
-            ['$cookies', '$scope', '$state', 'AuthenticationService',
-                function ($cookies, $scope, $state, AuthenticationService) {
+            ['$cookies', '$translate', '$scope', '$state', 'AuthenticationService',
+                function ($cookies, $translate, $scope, $state, AuthenticationService) {
                     'use strict';
 
                     var cookie = $cookies.webui_component_cookie;
