@@ -9,10 +9,15 @@ The WebUi for the CloudOpting manager will allow to:
 
 ## Dependencies
 - required:
-    - "angular": "~1.3.14"
-    - "angular-router": "~1.3.14"
+    - "angular": "1.3.15"
+    - "angular-route": "1.3.15"
+    - "angular-cookies": "1.3.15"
     - "angular-ui-router": "0.2.14"
     - "lodash": "3.8.0"
+    - "requirejs": "2.1.17"
+    - "ng-file-upload": "4.0.0"
+    - "angular-translate": "2.7.0"
+    - "angular-translate-loader-static-files": "2.7.0"
 
 ## Pre-install (in Ubuntu)
 1. Install git
@@ -20,11 +25,11 @@ The WebUi for the CloudOpting manager will allow to:
 2. Install NPM
     1. run `sudo apt-get install npm`
 3. Install http-server
-    1. run `npm install http-server -g`
+    1. run `npm install -g http-server`
 4. Install karma
-    1. run `npm install karma-cli -g`
+    1. run `npm install -g karma-cli`
 4. Install bower
-    1. run `npm install bower -g`
+    1. run `npm install -g bower`
 
 ## Install (in Ubuntu)
 1. Clone the ropository from github.
@@ -40,5 +45,5 @@ it might be needed to symlink it like so `sudo ln -s /usr/bin/nodejs /usr/bin/no
 The default login user/password is: **admin/admin** (role admin)
 
 ## Testing (in Ubuntu)
-1. Run the test (Expected steps 1 and 2 from Install section completed)
+1. Run the test (Steps 1 and 2 from Install required)
      1. run `npm test`
