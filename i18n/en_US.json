@@ -1,6 +1,9 @@
 {
   "detail.service": "Service",
+  "detail.status": "Status",
   "detail.button.subscribe": "SUBSCRIBE",
+  "detail.button.instances": "SEE INSTANCES",
+  "detail.button.completepublish": "COMPLETE PUBLISH",
 
   "error.message": "You're not authorized to view that page!",
 
@@ -24,7 +27,7 @@
   "instances.col.author": "Author",
   "instances.col.date": "Date",
   "instances.col.status": "Status",
-  "instances.col.edit": "Edit Instance",
+  "instances.col.actions": "Actions",
 
   "instances.status.requested": "Requested",
   "instances.status.deleted": "Deleted",
@@ -32,6 +35,11 @@
   "instances.status.todelete": "To Delete",
   "instances.status.stopped": "Stopped",
   "instances.button.go": "GO",
+  "instances.button.monitor": "Monitoring",
+  "instances.button.deploy": "Deploy",
+  "instances.button.stop": "Stop",
+  "instances.button.start": "Start",
+  "instances.button.delete": "Delete",
 
   "publish.title": "Publish Service",
   "publish.service.name": "Service Name",

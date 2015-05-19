@@ -22,8 +22,8 @@
                             <th width="100px" align="center" style="vertical-align: middle;">
                                 <div class="label">{{"instances.col.status" | translate}}</div>
                             </th>
-                            <th width="100px" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"instances.col.edit" | translate}}</div>
+                            <th width="100px" align="center" style="vertical-align: middle; horizontal-align: center;">
+                                <div class="label">{{"instances.col.actions" | translate}}</div>
                             </th>
                         </tr>
                         <tr class="row" ng-repeat="instance in instancesList">
@@ -39,8 +39,12 @@
                             <td width="100px" align="center" style="vertical-align: middle;">
                                 <div class="gwt-Label" style="white-space: normal;">{{instance.status}}</div>
                             </td>
-                            <td width="100px" align="center" style="vertical-align: middle;">
-                                <button type="button" class="faces-Button">{{"instances.button.go" | translate}}</button>
+                            <td width="300px" align="center" style="vertical-align: middle;">
+                                <button type="button" ng-show="showDeploy(instance.status)" class="faces-Button">{{"instances.button.deploy" | translate}}</button>
+                                <button type="button" ng-show="showStop(instance.status)" class="faces-Button">{{"instances.button.stop" | translate}}</button>
+                                <button type="button" ng-show="showDelete(instance.status)" class="faces-Button">{{"instances.button.delete" | translate}}</button>
+                                <button type="button" ng-show="showStart(instance.status)" class="faces-Button">{{"instances.button.start" | translate}}</button>
+                                <button type="button" ng-show="showMonitor(instance.status)" class="faces-Button">{{"instances.button.monitor" | translate}}</button>
                             </td>
                         </tr>
                         </tbody>
