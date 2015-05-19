@@ -32,11 +32,11 @@ The WebUi for the CloudOpting manager will allow to:
     1. run `npm install -g bower`
 
 ## Install (in Ubuntu)
-1. Clone the ropository from github.
+1. Clone the repository from github.
      1. run `git clone https://github.com/CloudOpting/cloudopting-manager-webui`
 2. Go to the path.
      1. run `cd cloudopting-manager-webui`
-3. Run the appliaction (The dependences are solved automatically)
+3. Run the application (The dependencies are solved automatically)
      1. run `npm start`
 
 *Note: If the step 3 `npm start` gives the error `/usr/bin/env: node: No such file or directory`
