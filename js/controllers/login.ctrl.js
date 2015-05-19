@@ -8,14 +8,12 @@ define(
                 function ($cookies, $translate, $scope, $state, AuthenticationService) {
                     'use strict';
 
-                    var cookie = $cookies.webui_component_cookie;
-                    if(cookie){
-                        var userWithRole = AuthenticationService.login(angular.fromJson(cookie));
-                        if(userWithRole) {
-                            //Change page
-                            $state.go('serviceCatalogList');
-                        }
+                    var userWithRole = AuthenticationService.loginByCookie();
+                    if(userWithRole) {
+                        //Change page
+                        $state.go('serviceCatalogList');
                     }
+                    //else ask for credentials
 
                     $scope.login = function (user) {
                         console.log("Initializing login function.");
@@ -23,9 +21,6 @@ define(
                         var userWithRole = AuthenticationService.login(user);
 
                         if(userWithRole) {
-                            //Set cookie
-                            $cookies.webui_component_cookie = angular.toJson(userWithRole);
-
                             //Change page
                             $state.go('serviceCatalogList');
                         } else {

@@ -42,6 +42,18 @@ define(['app'],
                         user.role = 'admin';
                         return user;
                     }
+                    if(user.name == 'subscriber' && user.password == 'subscriber') {
+                        user.role = 'subscriber';
+                        return user;
+                    }
+                    if(user.name == 'publisher' && user.password == 'publisher') {
+                        user.role = 'publisher';
+                        return user;
+                    }
+                    if(user.name == 'operator' && user.password == 'operator') {
+                        user.role = 'operator';
+                        return user;
+                    }
                     return false;
                     /*
                      return $http.post({
