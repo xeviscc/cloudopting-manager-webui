@@ -1,0 +1,20 @@
+<!-- INIT NAVIGATION -->
+<div class="container" ng-controller="IndexCtrl">
+    <div class="masthead">
+        <ul class="nav nav-justified">
+            <li ng-hide="logoutButton"><a ui-sref="login">Login</a></li>
+            <li ng-hide="logoutButton"><a ui-sref="register">Register</a></li>
+            <li ng-show="logoutButton"><a ui-sref="detail">Service Detail</a></li>
+            <li ng-show="logoutButton"><a ui-sref="publish">Publish Service</a></li>
+            <li ng-show="logoutButton"><a ui-sref="serviceCatalogList">Service Catalog List</a></li>
+            <li ng-show="logoutButton"><a ui-sref="subscribeServiceTaylorForm">Subscribe Service - Taylor Form</a></li>
+            <li ng-show="logoutButton"><a ui-sref="serviceSubscriberOperate">Service Subscriber. Operate</a></li>
+            <li ng-show="logoutButton"><a ui-sref="instances">Instances Service Catalog - Manager</a></li>
+            <li ng-show="logoutButton"><a ui-sref="servicesCatalog">Services Catalog - Manager</a></li>
+            <li ng-show="logoutButton"><a ui-sref="serviceAddDeployForm">Service Add Deploy Form</a></li>
+            <li ng-show="logoutButton"><input type="button" ng-click="logout()" value="Logout" /></li>
+            <li ng-show="logoutButton">Name: {{name}}</li>
+        </ul>
+    </div>
+</div>
+<!-- END NAVIGATION -->
