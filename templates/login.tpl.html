@@ -1,5 +1,6 @@
-<div class="container">
-    <div id="panelScreen">
+<div class="fixedWidth">
+    <div class="panelScreen">
+        <div class="header-ScreenLabel">{{"login.title" | translate}}</div>
         <form novalidate class="simple-form">
             {{ 'login.name' | translate}}: <input ng-model="user.name" /><br />
             {{ 'login.password' | translate}}: <input type="password" ng-model="user.password" /> <br />

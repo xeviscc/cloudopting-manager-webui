@@ -1,13 +1,16 @@
 {
   "detail.service": "Service",
   "detail.status": "Status",
+  "detail.title": "Service Detail",
   "detail.button.subscribe": "SUBSCRIBE",
   "detail.button.instances": "SEE INSTANCES",
   "detail.button.completepublish": "COMPLETE PUBLISH",
 
   "error.message": "You're not authorized to view that page!",
+  "error.title": "ERROR",
 
   "register.name": "Name",
+  "register.title": "REGISTER",
   "register.pasword": "Password",
   "register.repeatpassword": "Repeat password",
   "register.role": "Role",
@@ -16,10 +19,10 @@
   "register.error.unknown": "Something went wrong, try in a few minutes.",
 
   "login.name": "Name",
+  "login.title": "LOGIN",
   "login.password": "Password",
   "login.button": "Login",
   "login.error": "Login incorrect!",
-
 
   "instances.title": "Instances Service Catalog",
   "instances.button.search": "Search Service",
