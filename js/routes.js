@@ -90,13 +90,13 @@ define([
 
                 // enumerate routes that don't need authentication
                 var routesThatForPublic = ['/login', '/register', '/error'];
-                var routesThatForAdmins = ['/detail', '/index', '/instances', '/publish',
+                var routesThatForAdmins = ['/detail', '/instances', '/publish',
                     '/publish_two', '/serviceAddDeploy', '/serviceCatalogList', '/servicesCatalog',
                     '/serviceSubscriberOperate', '/subscribeServiceTaylorForm', '/toscaList',
-                    '/serviceAddDeployForm'];
-                var routesThatForSubscribers = ['/publish'];
-                var routesThatForPublishers = ['/subscribeServiceTaylorForm'];
-                var routesThatForOperators = ['/instances'];
+                    '/serviceAddDeployForm', '/error'];
+                var routesThatForSubscribers = ['/subscribeServiceTaylorForm', '/error'];
+                var routesThatForPublishers = ['/publish', '/servicesCatalog', '/error'];
+                var routesThatForOperators = ['/instances', '/error'];
 
                 // check if current location matches route
                 var routeAllowedPublic = function (route) {
