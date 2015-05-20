@@ -11,7 +11,7 @@
 
   "register.name": "Name",
   "register.title": "REGISTER",
-  "register.pasword": "Password",
+  "register.password": "Password",
   "register.repeatpassword": "Repeat password",
   "register.role": "Role",
   "register.button": "Register",

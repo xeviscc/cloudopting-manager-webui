@@ -3,7 +3,7 @@
         <div class="header-ScreenLabel">{{"register.title" | translate}}</div>
         <form novalidate class="simple-form">
             {{ "register.name" | translate}}: <input ng-model="user.name" /><br />
-            {{ "register.pasword" | translate}}: <input type="password" ng-model="user.password" /><br />
+            {{ "register.password" | translate}}: <input type="password" ng-model="user.password" /><br />
             {{ "register.repeatpassword" | translate}}: <input type="password" ng-model="user.password_two" /><br />
             {{ "register.role" | translate}}:
             <select>
@@ -12,7 +12,7 @@
                 </option>
             </select>
             <br />
-            <input type="button" ng-click="register(user)" value="{{ 'register.button' | translate}}" />
+            <input type="submit" ng-click="register(user)" value="{{ 'register.button' | translate}}" />
         </form>
         <div style="background-color: red">
             {{error}}

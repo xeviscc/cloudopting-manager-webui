@@ -33,7 +33,7 @@ The WebUi for the CloudOpting manager will allow to:
 
 ## Install (in Ubuntu)
 1. Clone the repository from github.
-     1. run `git clone https://github.com/CloudOpting/cloudopting-manager-webui`
+     1. run `git clone https://github.com/CloudOpting/cloudopting-manager-webui.git`
 2. Go to the path.
      1. run `cd cloudopting-manager-webui`
 3. Run the application (The dependencies are solved automatically)

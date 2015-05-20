@@ -5,7 +5,7 @@
             {{ 'login.name' | translate}}: <input ng-model="user.name" /><br />
             {{ 'login.password' | translate}}: <input type="password" ng-model="user.password" /> <br />
             <br />
-            <input type="button" ng-click="login(user)" value="{{ 'login.button' | translate}}" />
+            <input type="submit" ng-click="login(user)" value="{{ 'login.button' | translate}}" />
         </form>
         <div style="background-color: red">
             {{error}}
