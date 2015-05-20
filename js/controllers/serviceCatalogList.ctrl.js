@@ -19,9 +19,9 @@ define(
                         ApplicationService.currentApplication = applicaiton;
                         //go to the detail
                         $location.path('/detail');
-                    }
+                    };
                 }
             ]
-        )
+        );
     }
 );

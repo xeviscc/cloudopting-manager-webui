@@ -17,8 +17,7 @@ define(
 
                     //TODO: Implement button go for each instance.
                 }
-
             ]
-        )
+        );
     }
 );

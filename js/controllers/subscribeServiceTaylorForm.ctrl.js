@@ -10,8 +10,7 @@ define(
                 function ($scope, $log, RestApi, ApplicationService) {
                     'use strict';
 
-                    if(ApplicationService.currentApplication !== undefined
-                        && ApplicationService.currentApplication !== null)
+                    if(ApplicationService.currentApplication !== undefined && ApplicationService.currentApplication !== null)
                     {
                         var screen = RestApi.inputParameters(ApplicationService.currentApplication.id);
                         $scope.cloudNodeList = screen.cloudNodeList;
@@ -26,11 +25,11 @@ define(
                     }
 
                     $scope.requestSubscription = function(){
-                        //Request Subscription¿?
+                        //Request Subscription?
                         //RestApi.requestSubscription($scope.application);
-                    }
+                    };
                 }
             ]
-        )
+        );
     }
 );

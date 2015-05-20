@@ -12,7 +12,7 @@ define(
 
 
 
-                    //TODO: Change instancesList to applicationList once it is developed properly?¿?
+                    //TODO: Change instancesList to applicationList once it is developed properly?
                     $scope.instancesList = RestApi.instancesList();
 
                     //TODO: Implement button "Search Service" functionality.
@@ -37,6 +37,6 @@ define(
                     };
                 }
             ]
-        )
+        );
     }
 );

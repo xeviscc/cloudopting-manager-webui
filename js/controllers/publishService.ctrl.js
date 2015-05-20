@@ -45,7 +45,7 @@ define(
                         //$log.debug('Changing to PublishTwo view.');
                         $state.go('publish_two');
 
-                    }
+                    };
 
                     /*
                      * WIZARD - SCREEN TWO
@@ -68,17 +68,17 @@ define(
                         $scope.deleteLib = function (a){
                             console.log("delete " + a);
 
-                        }
-                    }
+                        };
+                    };
 
 
 
 
                     $scope.publishService = function () {
                         console.log($scope.contentLib);
-                    }
+                    };
                 }
             ]
-        )
+        );
     }
 );

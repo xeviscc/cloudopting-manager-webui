@@ -14,8 +14,7 @@ define(
                     //RestApi.
                     //Call to the middleware to get the roles
 
-                    if(ApplicationService.currentApplication !== undefined
-                        && ApplicationService.currentApplication !== null)
+                    if(ApplicationService.currentApplication !== undefined && ApplicationService.currentApplication !== null)
                     {
                         var screen = RestApi.inputParameters(ApplicationService.currentApplication.id);
                         $scope.cloudNodeList = screen.cloudNodeList;
@@ -41,6 +40,6 @@ define(
                     };
                 }
             ]
-        )
+        );
     }
 );

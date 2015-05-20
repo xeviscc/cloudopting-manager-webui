@@ -8,6 +8,6 @@ define(['app'],
                     currentUser: null
                 };
             }
-        )
+        );
     }
 );

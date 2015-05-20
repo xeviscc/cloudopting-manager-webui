@@ -1,7 +1,9 @@
 define(['app'],
     function(app) {
-        app.controller('ServiceSubscriberOperateCtrl', function () {
+        app.controller('ServiceSubscriberOperateCtrl',
+            function () {
 
-        })
+            }
+        );
     }
 );

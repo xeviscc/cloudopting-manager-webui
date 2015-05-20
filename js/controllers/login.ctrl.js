@@ -34,8 +34,7 @@ define(
                      * @param user
                      */
                     function changePage(user) {
-                        if(RoleService.isRoleAdmin(user)
-                            || RoleService.isRoleSubscriber(user))
+                        if(RoleService.isRoleAdmin(user) || RoleService.isRoleSubscriber(user))
                         {
                             $location.path('/serviceCatalogList');
                         }
@@ -54,6 +53,6 @@ define(
                     }
                 }
             ]
-        )
+        );
     }
 );

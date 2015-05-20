@@ -28,7 +28,7 @@ define(['app'],
                 var APPLICATION_LIST_METHOD = "application/list?page=%s&size=%s&sortBy=%s&sortOrder=%s&filter=%s";
                 var APPLICATION_LIST_UNPAGINATED_METHOD = "application/listunpaginated";
 
-                var INPUT_PARAMETERS_METHOD = 'application/%s/inputparameters'
+                var INPUT_PARAMETERS_METHOD = 'application/%s/inputparameters';
 
                 var restAPI = {};
 
@@ -146,7 +146,7 @@ define(['app'],
                 };
 
                 /**
-                 * TODO: WILL THIS METHOD EXIST OR IT WILL BE TAKEN FROM APPLICATION LIST?¿?
+                 * TODO: WILL THIS METHOD EXIST OR IT WILL BE TAKEN FROM APPLICATION LIST?
                  * Method to get the customization list without pagination
                  * @returns {*}
                  */
@@ -492,6 +492,6 @@ define(['app'],
                 return restAPI;
 
             }
-        )
+        );
     }
 );

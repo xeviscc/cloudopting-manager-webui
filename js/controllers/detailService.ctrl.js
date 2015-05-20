@@ -18,7 +18,7 @@ define(
                         if(appDetail.status === "UNFINISHED"){
                             $scope.detail_function = function() {
                                 $location.path('/publish');
-                                //TODO: Set the current application to the application service?¿?
+                                //TODO: Set the current application to the application service?
                                 //ApplicationService.currentApplication = appDetail;
                             };
                             $scope.buttonValue = $translate.instant('detail.button.completepublish');
@@ -29,8 +29,7 @@ define(
                             $scope.buttonValue = $translate.instant('detail.button.instances');
                         }
                     }
-                    if(RoleService.isRoleAdmin(SessionService.role)
-                        || RoleService.isRoleOperator(SessionService.role))
+                    if(RoleService.isRoleAdmin(SessionService.role) || RoleService.isRoleOperator(SessionService.role))
                     {
                         $scope.detail_function = function() {
                             $location.path('/instances');

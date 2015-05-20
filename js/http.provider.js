@@ -33,6 +33,6 @@ define(['app'],
 
                 $httpProvider.interceptors.push(logsOutUserOn401);
             }
-        )
+        );
     }
 );

@@ -27,9 +27,9 @@ define(
                                 $scope.error = $translate.instant('register.error.unknown');
                             }
                         }
-                    }
+                    };
                 }
             ]
-        )
+        );
     }
 );

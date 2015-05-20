@@ -15,6 +15,6 @@ define(
                 $translateProvider.preferredLanguage('en_US');
                 $translateProvider.useSanitizeValueStrategy('escaped');
             }
-        )
+        );
     }
 );

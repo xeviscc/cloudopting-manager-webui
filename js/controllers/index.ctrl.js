@@ -24,12 +24,12 @@ define(['app'],
                             $scope.logout = function(){
                                 AuthenticationService.logout();
                                 $location.path("/login");
-                            }
+                            };
                         },
                         true
                     );
                 }
             ]
-        )
+        );
     }
 );
