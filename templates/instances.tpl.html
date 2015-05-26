@@ -1,56 +1,61 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"instances.title" | translate}}</div>
-        <div class="innerPanel">
-            <button type="button" class="crux-Button innerPanel-Button">{{"instances.button.search" | translate}}</button>
-            <input type="text" class="innerPanel-TextBox">
-        </div>
-        <div class="grid">
-            <div class="crux-Grid" style="overflow: auto; position: relative; zoom: 1; width: 100%;">
-                <div style="position: relative; zoom: 1;">
-                    <table cellspacing="1" cellpadding="0" style="width: 100%;">
-                        <tr class="columnHeadersRow row">
-                            <th width="150px" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"instances.col.instanceof" | translate}}</div>
-                            </th>
-                            <th width="100px" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"instances.col.author" | translate}}</div>
-                            </th>
-                            <th width="100px" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"instances.col.date" | translate}}</div>
-                            </th>
-                            <th width="100px" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"instances.col.status" | translate}}</div>
-                            </th>
-                            <th width="100px" align="center" style="vertical-align: middle; horizontal-align: center;">
-                                <div class="label">{{"instances.col.actions" | translate}}</div>
-                            </th>
-                        </tr>
-                        <tr class="row" ng-repeat="instance in instancesList">
-                            <td width="150px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">{{instance.service_name}}</div>
-                            </td>
-                            <td width="100px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">{{instance.author}}</div>
-                            </td>
-                            <td width="100px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">{{instance.date}}</div>
-                            </td>
-                            <td width="100px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">{{instance.status}}</div>
-                            </td>
-                            <td width="300px" align="center" style="vertical-align: middle;">
-                                <button type="button" ng-show="showDeploy(instance.status)" class="faces-Button">{{"instances.button.deploy" | translate}}</button>
-                                <button type="button" ng-show="showStop(instance.status)" class="faces-Button">{{"instances.button.stop" | translate}}</button>
-                                <button type="button" ng-show="showDelete(instance.status)" class="faces-Button">{{"instances.button.delete" | translate}}</button>
-                                <button type="button" ng-show="showStart(instance.status)" class="faces-Button">{{"instances.button.start" | translate}}</button>
-                                <button type="button" ng-show="showMonitor(instance.status)" class="faces-Button">{{"instances.button.monitor" | translate}}</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"instances.title" | translate}}</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button">{{"instances.button.search" | translate}}</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-12 -->
             </div>
+            <br />
+
+            <table cellspacing="1" cellpadding="1" class="table-responsive"  style="width: 100%;">
+                <tr>
+                    <th>
+                        {{"instances.col.instanceof" | translate}}
+                    </th>
+                    <th>
+                        {{"instances.col.author" | translate}}
+                    </th>
+                    <th>
+                        {{"instances.col.date" | translate}}
+                    </th>
+                    <th>
+                        {{"instances.col.status" | translate}}
+                    </th>
+                    <th>
+                        {{"instances.col.actions" | translate}}
+                    </th>
+                </tr>
+                <tr ng-repeat="instance in instancesList">
+                    <td>
+                        {{instance.service_name}}
+                    </td>
+                    <td>
+                        {{instance.author}}
+                    </td>
+                    <td>
+                        {{instance.date}}
+                    </td>
+                    <td>
+                        {{instance.status}}
+                    </td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                            <button type="button" ng-show="showDeploy(instance.status)" class="btn btn-default">{{"instances.button.deploy" | translate}}</button>
+                            <button type="button" ng-show="showStop(instance.status)" class="btn btn-default">{{"instances.button.stop" | translate}}</button>
+                            <button type="button" ng-show="showDelete(instance.status)" class="btn btn-default">{{"instances.button.delete" | translate}}</button>
+                            <button type="button" ng-show="showStart(instance.status)" class="btn btn-default">{{"instances.button.start" | translate}}</button>
+                            <button type="button" ng-show="showMonitor(instance.status)" class="btn btn-default">{{"instances.button.monitor" | translate}}</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

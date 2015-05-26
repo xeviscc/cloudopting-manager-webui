@@ -1,21 +1,35 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"register.title" | translate}}</div>
-        <form novalidate class="simple-form">
-            {{ "register.name" | translate}}: <input ng-model="user.name" /><br />
-            {{ "register.password" | translate}}: <input type="password" ng-model="user.password" /><br />
-            {{ "register.repeatpassword" | translate}}: <input type="password" ng-model="user.password_two" /><br />
-            {{ "register.role" | translate}}:
-            <select>
-                <option ng-repeat="role in roleList">
-                    {{role.Role.name}}
-                </option>
-            </select>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"register.title" | translate}}</div>
+        <div class="panel-body">
+            <form novalidate class="simple-form">
+                {{ "register.name" | translate}}: <input ng-model="user.name" /><br />
+                {{ "register.password" | translate}}: <input type="password" ng-model="user.password" /><br />
+                {{ "register.repeatpassword" | translate}}: <input type="password" ng-model="user.password_two" /><br />
+                <!--
+                {{ "register.role" | translate}}:
+                <select>
+                    <option ng-repeat="role in roleList">
+                        {{role.Role.name}}
+                    </option>
+                </select>
+                -->
+                <br />
+                <input type="submit" ng-click="register(user)" value="{{ 'register.button' | translate}}" />
+                <!-- CAPTCHA VALIDATOR -->
+            </form>
             <br />
-            <input type="submit" ng-click="register(user)" value="{{ 'register.button' | translate}}" />
-        </form>
-        <div style="background-color: red">
-            {{error}}
+            <div style="background-color: red">
+                {{error}}
+            </div>
+            <br />
+            <p>
+                The default role assigned will be "Subscriber", this will allow you to subscribe to any service of the platform.
+            </p>
+            <p>
+                If you want to ask for the "Publisher" or "Operator" role, you have to contact us with the Phone: +66 555 444 333
+                or send an email to admin@cloudopting.eu.
+            </p>
         </div>
     </div>
 </div>

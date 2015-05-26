@@ -1,42 +1,56 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"services.catalog.title" | translate}}</div>
-        <div class="innerPanel">
-            <button type="button" class="crux-Button innerPanel-Button">{{"services.catalog.button.search" | translate}}</button>
-            <input type="text" class="innerPanel-TextBox">
-        </div>
-        <div class="grid">
-            <div class="crux-Grid" style="overflow: auto; position: relative; zoom: 1; width: 100%;">
-                <div style="position: relative; zoom: 1;">
-                    <table cellspacing="1" cellpadding="0" style="width: 100%;">
-                        <tbody style="width: 100%; height: 100%;">
-                        <tr class="columnHeadersRow row">
-                            <th class="cellWrapper" width="250px" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"services.catalog.col.name" | translate}}</div>
-                            </th>
-                            <th width="150px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"services.catalog.col.status" | translate}}</div>
-
-                            </th>
-                            <th width="100px" class="cellWrapper" align="center" style="vertical-align: middle;">
-                                <div class="label">{{"services.catalog.col.edit" | translate}}</div>
-                            </th>
-                        </tr>
-                        <tr class="row" ng-repeat="app in applicationList">
-                            <td width="250px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">{{app.Application.name}}</div>
-                            </td>
-                            <td width="150px" align="center" style="vertical-align: middle;">
-                                <div class="gwt-Label" style="white-space: normal;">{{app.Application.status}}</div>
-                            </td>
-                            <td width="100px" align="center" style="vertical-align: middle;">
-                                <button type="button" class="faces-Button">{{"services.catalog.button.go" | translate}}</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"services.catalog.title" | translate}}</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary pull-right" type="button" ng-click="goToPublish()">{{"services.catalog.button.addservice" | translate}}</button>
+                    </span>
+                </div><!-- /.col-lg-12 -->
             </div>
+            <br />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button">{{"services.catalog.button.search" | translate}}</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-12 -->
+            </div>
+            <br />
+
+            <table cellspacing="1" cellpadding="1" class="table-responsive" style="width: 100%;">
+                <tr>
+                    <th>
+                        {{"services.catalog.col.name" | translate}}
+                    </th>
+                    <th>
+                        {{"services.catalog.col.status" | translate}}
+                    </th>
+                    <th>
+                        {{"services.catalog.col.edit" | translate}}
+                    </th>
+                </tr>
+                <tr ng-repeat="app in applicationList">
+                    <td>
+                        {{app.Application.name}}
+                    </td>
+                    <td>
+                        {{app.Application.status}}
+                    </td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default" ng-click="goToEdit(app.Application.id)">{{"services.catalog.button.edit" | translate}}</button>
+                            <button type="button" class="btn btn-default" ng-click="goToInstanceList(app.Application.id)">{{"services.catalog.button.listinstances" | translate}}</button>
+                            <button type="button" class="btn btn-default" ng-click="goToDelete(app.Application.id)">{{"services.catalog.button.delete" | translate}}</button>
+                            <button type="button" class="btn btn-default" ng-click="goToCreateInstance(app.Application.id)">{{"services.catalog.button.createinstance" | translate}}</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>

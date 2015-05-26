@@ -1,15 +1,17 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"login.title" | translate}}</div>
-        <form novalidate class="simple-form">
-            {{ 'login.name' | translate}}: <input ng-model="user.name" /><br />
-            {{ 'login.password' | translate}}: <input type="password" ng-model="user.password" /> <br />
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"login.title" | translate}}</div>
+        <div class="panel-body">
+            <form novalidate class="simple-form">
+                {{ 'login.name' | translate}}: <input ng-model="user.name" /><br />
+                {{ 'login.password' | translate}}: <input type="password" ng-model="user.password" /> <br />
+                <br />
+                <input type="submit" ng-click="login(user)" value="{{ 'login.button' | translate}}" />
+            </form>
             <br />
-            <input type="submit" ng-click="login(user)" value="{{ 'login.button' | translate}}" />
-        </form>
-        <div style="background-color: red">
-            {{error}}
+            <div style="background-color: red">
+                {{error}}
+            </div>
         </div>
     </div>
-
 </div>

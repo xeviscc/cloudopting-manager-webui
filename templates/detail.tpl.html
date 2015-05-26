@@ -1,14 +1,16 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"detail.title" | translate}}</div>
-        <div class="crux-StyledPanelOuter storeItem" style="display: table; box-sizing: border-box;">
-            <h2>{{appDetail.name}} {{"detail.service" | translate}}</h2>
-            <h3>{{"detail.status" | translate}}: {{appDetail.status}}</h3>
-            <br />
-            <img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/gift.png" height="100" width="100"/>
-            <br />
-            <p>{{appDetail.description}}</p>
-            <input type="button" ng-show="showButton" ng-click="detail_function()" value="{{buttonValue}}" />
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"detail.title" | translate}}</div>
+        <div class="panel-body">
+            <div class="crux-StyledPanelOuter storeItem" style="display: table; box-sizing: border-box;">
+                <h2>{{appDetail.name}} {{"detail.service" | translate}}</h2>
+                <h3>{{"detail.status" | translate}}: {{appDetail.status}}</h3>
+                <br />
+                <img src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/gift.png" height="100" width="100"/>
+                <br />
+                <p>{{appDetail.description}}</p>
+                <input type="button" ng-show="showButton" ng-click="detail_function()" value="{{buttonValue}}" />
+            </div>
         </div>
     </div>
 </div>

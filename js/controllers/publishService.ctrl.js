@@ -39,19 +39,53 @@ define(
                          */
                     };
 
-                    $scope.saveConfiguration = function () {
+                    $scope.saveConfigurationWizardOne = function () {
                         //Send file.
-                        $scope.upload($scope.files);
-                        //$log.debug('Changing to PublishTwo view.');
-                        $state.go('publish_two');
+                        //$scope.upload($scope.files);
+                        $log.info("Name: " + $scope.name);
+                        $log.info("Description: " + $scope.description);
+                        if($scope.files) $log.info("Filename: " + $scope.files[0].name);
 
+                        $state.go('publish2');
                     };
+
 
                     /*
                      * WIZARD - SCREEN TWO
                      */
 
-                    $scope.contentLib_names = [];
+                    $scope.libraryList = [];
+
+                    $scope.isLibraryEmpty = function() {
+                        return $scope.libraryList.length==0;
+                    }
+
+                    $scope.$watch(
+                        function() {
+                            return $scope.contentLib;
+                        },
+                        function(newVal, oldVal)
+                        {
+                            if($scope.contentLib) {
+                                $scope.libraryList.push.apply($scope.libraryList, $scope.contentLib);
+                            }
+                        },
+                        true
+                    );
+
+                    $scope.saveConfigurationWizardTwo = function () {
+                        //Send files.
+                        //$scope.upload($scope.libraryList);
+                        if ($scope.libraryList && $scope.libraryList.length) {
+                            for (var i = 0; i < $scope.libraryList.length; i++) {
+                                var file = $scope.libraryList[i];
+                                $log.info("Filename: " + file.name);
+                            }
+                        }
+
+                        $state.go('publish3');
+                    };
+
 
                     /*
                      $scope.$watch('contentLib', function () {
@@ -65,13 +99,26 @@ define(
                     $scope.getContentLibrary = function (){
                         $scope.cFiles = $scope.contentLib;
 
-                        $scope.deleteLib = function (a){
-                            console.log("delete " + a);
+                    };
 
-                        };
+                    $scope.deleteLib = function (file){
+                        console.log("delete " + file.name);
+                        var index = $scope.libraryList.indexOf(file);
+                        if (index > -1) {
+                            $scope.libraryList.splice(index, 1);
+                        }
                     };
 
 
+                    /*
+                     * WIZARD - SCREEN THREE
+                     */
+
+
+                    $scope.aveConfiguration = function () {
+                        //Do not move. Stay.
+
+                    };
 
 
                     $scope.publishService = function () {

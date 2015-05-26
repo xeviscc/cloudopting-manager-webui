@@ -1,69 +1,26 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"publish.title" | translate}}</div>
-        <form target="FormPanel_toscaui_1" action="/rest/proxyAPIService/uploadFile" method="POST">
-            <table class="publishService-Form">
-                <colgroup>
-                    <col>
-                </colgroup>
-                <tbody>
-                <tr>
-                    <td class="formEntryLabel" style="display: table-cell; text-align: left;">
-                        <div class="gwt-Label"></div>
-                    </td>
-                    <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        {{"publish.select.tosca" | translate}}:
-                        <!--ngf-multiple="multiple"-->
-                        <div class="button-upload" ngf-select ng-model="toscaArchive" >{{"publish.select.file" | translate}}</div>
-                        {{"publish.file" | translate}}:
-                        <ul>
-                            <li ng-repeat="t in toscaArchive" style="font:smaller">{{t.name}}</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="formEntryLabel" style="display: table-cell; text-align: left;">
-                        <div class="gwt-Label"></div>
-                    </td>
-                    <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        <div class="gwt-Label">{{"publish.content.library" | translate}}</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="formEntryLabel" style="display: table-cell; text-align: left;">
-                        <div class="gwt-Label"></div>
-                    </td>
-                    <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        <div class="button-upload" ngf-select ng-model="contentLib" >{{"publish.add.item" | translate}}</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="formEntryLabel" style="display: table-cell; text-align: left;">
-                        <div class="gwt-Label"></div>
-                    </td>
-                    <td class="formEntryLabel" style="display: table-cell; text-align: left;">
-                        <div>
-                            <select ng-model="getContentLibrary" class="gwt-ListBox" size="6" ng-options="c as c for hola in cFiles" style="width: 100px;">
-                                <!--<option ng-repeat="c in contentLib" value="{{c.name}}">{{c.name}}</option>-->
-                            </select>
-                            <br />
-                            <button type="button" class="crux-Button publish-Library" ng-click="deleteLib(c)" >{{"publish.delete.item" | translate}}</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="formEntryLabel" style="display: table-cell; text-align: left;">
-                        <div class="gwt-Label"></div>
-                    </td>
-                    <td class="formEntryData" style="display: table-cell; text-align: left;">
-                        <div>
-                            <button type="button" class="crux-Button" ng-click="saveConfiguration()">{{"publish.button.save" | translate}}</button>
-                            <button type="button" class="crux-Button" ng-click="publishService()">{{"publish.button.publish" | translate}}</button>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </form>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"publish.title" | translate}}</div>
+        <div class="panel-body">
+            <form novalidate class="">
+                <div class="form-group row">
+                    <div class="btn btn-info" ngf-select ng-model="contentLib">{{"publish.add.item" | translate}}</div>
+                </div>
+                <div class="form-group row" ng-show="isLibraryEmpty()">
+                    <label>{{"publish.content.library" | translate}}</label>
+                    <input class="form-control" type="text" autocomplete="off" value="{{'publish.content.emptylibrary' | translate}}" disabled />
+                </div>
+                <div class="form-group row" ng-hide="isLibraryEmpty()">
+                    <label>{{"publish.content.library" | translate}}</label>
+                    <div class="input-group" ng-repeat="content in libraryList">
+                        <input class="form-control" type="text" autocomplete="off" value="{{content.name}}" disabled/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-danger" ng-click="deleteLib(content)" >{{"publish.delete.item" | translate}}</button>
+                        </span>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" ng-click="saveConfigurationWizardTwo()">{{"publish.button.save_n_next" | translate}}</button>
+            </form>
+        </div>
     </div>
 </div>

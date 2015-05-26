@@ -1,36 +1,39 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"taylor.title" | translate}}</div>
-        <div class="serviceParametersPanel">
-            <span class="mo_text">{{"taylor.params.title" | translate}}</span>
-            <div class="taylor-Label">{{"taylor.cloudnode" | translate}}:</div>
-            <select class="taylor-ListBox">
-                <option ng-repeat="cn in cloudNodeList" value="{{cn.name}}">{{cn.name}}</option>
-            </select>
-            <div class="taylor-Label">{{"taylor.urldomain" | translate}}:</div>
-            <input type="text" class="taylor-TextBox">
-            <div class="serviceFlavour">
-                <span class="mo_text">{{"taylor.flavour" | translate}}</span>
-                <div class="taylor-Label">{{"taylor.os" | translate}}:</div>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"taylor.title" | translate}}</div>
+        <div class="panel-body">
+
+            <div class="serviceParametersPanel">
+                <span class="mo_text">{{"taylor.params.title" | translate}}</span>
+                <div class="taylor-Label">{{"taylor.cloudnode" | translate}}:</div>
                 <select class="taylor-ListBox">
-                    <option ng-repeat="os in osList" value="{{os.name}}">{{os.name}}</option>
+                    <option ng-repeat="cn in cloudNodeList" value="{{cn.name}}">{{cn.name}}</option>
                 </select>
-                <div class="taylor-Label">{{"taylor.cssskin" | translate}}:</div>
-                <select class="taylor-ListBox">
-                    <option ng-repeat="skin in skinList" value="{{skin.name}}">{{skin.name}}</option>
-                </select>
-                <div class="taylor-Label">{{"taylor.sla" | translate}}:</div>
-                <select class="taylor-ListBox"></select>
-                <div class="taylor-Label">{{"taylor.numcpu" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" disabled="">
-                <div class="taylor-Label">{{"taylor.bandwidth" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" disabled="">
-                <div class="taylor-Label">{{"taylor.disk" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" disabled="">
-                <div class="taylor-Label">{{"taylor.ram" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" disabled="">
+                <div class="taylor-Label">{{"taylor.urldomain" | translate}}:</div>
+                <input type="text" class="taylor-TextBox">
+                <div class="serviceFlavour">
+                    <span class="mo_text">{{"taylor.flavour" | translate}}</span>
+                    <div class="taylor-Label">{{"taylor.os" | translate}}:</div>
+                    <select class="taylor-ListBox">
+                        <option ng-repeat="os in osList" value="{{os.name}}">{{os.name}}</option>
+                    </select>
+                    <div class="taylor-Label">{{"taylor.cssskin" | translate}}:</div>
+                    <select class="taylor-ListBox">
+                        <option ng-repeat="skin in skinList" value="{{skin.name}}">{{skin.name}}</option>
+                    </select>
+                    <div class="taylor-Label">{{"taylor.sla" | translate}}:</div>
+                    <select class="taylor-ListBox"></select>
+                    <div class="taylor-Label">{{"taylor.numcpu" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" disabled="">
+                    <div class="taylor-Label">{{"taylor.bandwidth" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" disabled="">
+                    <div class="taylor-Label">{{"taylor.disk" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" disabled="">
+                    <div class="taylor-Label">{{"taylor.ram" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" disabled="">
+                </div>
+                <button type="button" class="btn">{{"taylor.button.subscribe" | translate}}</button>
             </div>
-            <button type="button" class="crux-Button">{{"taylor.button.subscribe" | translate}}</button>
         </div>
     </div>
 </div>

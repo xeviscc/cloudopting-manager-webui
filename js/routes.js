@@ -18,7 +18,7 @@ define([
             function ($stateProvider, $urlRouterProvider) {
                 'use strict';
 
-                $urlRouterProvider.otherwise('/login');
+                $urlRouterProvider.otherwise('/serviceCatalogList');
 
                 $stateProvider.
                     state('login', {
@@ -38,12 +38,17 @@ define([
                     }).
                     state('publish', {
                         url: '/publish',
-                        templateUrl: 'templates/publish.tpl.html',
+                        templateUrl: 'templates/publish_one.tpl.html',
                         controller: 'PublishServiceCtrl'
                     }).
-                    state('publish_two', {
+                    state('publish2', {
                         url: '/publish_two',
                         templateUrl: 'templates/publish_two.tpl.html',
+                        controller: 'PublishServiceCtrl'
+                    }).
+                    state('publish3', {
+                        url: '/publish_two',
+                        templateUrl: 'templates/publish_three.tpl.html',
                         controller: 'PublishServiceCtrl'
                     }).
                     state('serviceCatalogList', {
@@ -89,14 +94,18 @@ define([
                 'use strict';
 
                 // enumerate routes that don't need authentication
-                var routesThatForPublic = ['/login', '/register', '/error'];
+                var routesThatForPublic = ['/login', '/register', '/error', '/serviceCatalogList'];
+
                 var routesThatForAdmins = ['/detail', '/instances', '/publish',
-                    '/publish_two', '/serviceAddDeploy', '/serviceCatalogList', '/servicesCatalog',
+                    '/publish2', '/publish3', '/serviceAddDeploy', '/serviceCatalogList', '/servicesCatalog',
                     '/serviceSubscriberOperate', '/subscribeServiceTaylorForm', '/toscaList',
                     '/serviceAddDeployForm', '/error'];
-                var routesThatForSubscribers = ['/subscribeServiceTaylorForm', '/error'];
-                var routesThatForPublishers = ['/publish', '/servicesCatalog', '/error'];
-                var routesThatForOperators = ['/instances', '/error'];
+
+                var routesThatForPublishers = ['/servicesCatalog', '/publish', '/publish2', '/publish3', '/instances', '/serviceCatalogList', '/error'];
+
+                var routesThatForSubscribers = ['/subscribeServiceTaylorForm', '/error', '/serviceCatalogList'];
+
+                var routesThatForOperators = ['/error', '/serviceCatalogList'];
 
                 // check if current location matches route
                 var routeAllowedPublic = function (route) {

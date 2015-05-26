@@ -1,7 +1,8 @@
 <!-- INIT NAVIGATION -->
+<!-- MENU FOR DEVELOPMENT -->
 <div class="container" ng-controller="IndexCtrl">
     <div class="masthead">
-        <ul class="nav nav-justified">
+        <ul class="nav nav-pills">
             <li ng-hide="logoutButton"><a ui-sref="login">Login</a></li>
             <li ng-hide="logoutButton"><a ui-sref="register">Register</a></li>
             <li ng-show="logoutButton"><a ui-sref="detail">Service Detail</a></li>
@@ -14,6 +15,16 @@
             <li ng-show="logoutButton"><a ui-sref="serviceAddDeployForm">Service Add Deploy Form</a></li>
             <li ng-show="logoutButton"><input type="button" ng-click="logout()" value="Logout" /></li>
             <li ng-show="logoutButton">Name: {{name}}</li>
+        </ul>
+    </div>
+</div>
+<!-- END NAVIGATION -->
+
+<!-- INIT NAVIGATION -->
+<div class="container" ng-controller="IndexCtrl">
+    <div class="masthead">
+        <ul class="nav nav-pills">
+            <li ng-show="isPublisher()"><a ui-sref="servicesCatalog">Dashboard</a></li>
         </ul>
     </div>
 </div>

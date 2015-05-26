@@ -1,18 +1,21 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"catalog.title" | translate}}</div>
-        <div class="crux-Storyboard" style="width: 100%; height: 100%;">
-            <div>
-                <div style="text-align: center;">
-                    <div tabindex="0" class="item" style="height: 200px; width: 200px; display: inline-table; vertical-align: bottom;"  ng-repeat="app in applicationList">
-                        <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
-                        <div class="crux-StyledPanelOuter storeItem" style="display: table; box-sizing: border-box;">
-                            <div class="crux-StyledPanel" style="display: table-cell; width: 100%; vertical-align: middle;">
-                                <div class="cf" style="margin-left: auto; margin-right: auto;">
-                                    <div class="productImage"></div>
-                                    <div class="productName">{{app.Application.name}}</div>
-                                    <div class="productOther">{{app.Application.other}}</div>
-                                    <button type="button" class="gwt-Button productButton" ng-click="detail(app.Application)">{{"catalog.button.choose" | translate}}</button>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"catalog.title" | translate}}</div>
+        <div class="panel-body">
+
+            <div class="crux-Storyboard" style="width: 100%; height: 100%;">
+                <div>
+                    <div style="text-align: center;">
+                        <div tabindex="0" class="item" style="height: 200px; width: 200px; display: inline-table; vertical-align: bottom;"  ng-repeat="app in applicationList">
+                            <input type="text" tabindex="-1" role="presentation" style="opacity: 0; height: 1px; width: 1px; z-index: -1; overflow: hidden; position: absolute;">
+                            <div class="crux-StyledPanelOuter storeItem" style="display: table; box-sizing: border-box;">
+                                <div class="crux-StyledPanel" style="display: table-cell; width: 100%; vertical-align: middle;">
+                                    <div class="cf">
+                                        <div class="productImage"></div>
+                                        <div class="productName">{{app.Application.name}}</div>
+                                        <div class="productOther">{{app.Application.other}}</div>
+                                        <button type="button" class="btn productButton" ng-click="detail(app.Application)">{{"catalog.button.choose" | translate}}</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

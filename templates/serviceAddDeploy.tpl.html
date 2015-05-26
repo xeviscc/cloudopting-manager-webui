@@ -1,54 +1,57 @@
 <div class="fixedWidth">
-    <div class="panelScreen">
-        <div class="header-ScreenLabel">{{"service.title" | translate}}</div>
-        <div class="serviceDeploy">
-            <span class="mo_text">{{"service.deploy.title" | translate}}</span>
-            <button type="button" class="crux-Button">{{"service.button.deploy" | translate}}</button>
-            <button type="button" class="crux-Button">{{"service.button.test" | translate}}</button>
-        </div>
-        <div class="serviceParameters">
-            <span class="mo_text">{{"service.params.title" | translate}}</span>
-            <div class="leftPanel">
-                <div class="taylor-Label">{{"service.cloudnode" | translate}}:</div>
-                <select class="taylor-ListBox" ng-model="service.cloudNode" ng-options="cloud.name for cloud in cloudNodeList"></select>
-                <div class="taylor-Label">{{"service.os" | translate}}:</div>
-                <select class="taylor-ListBox" ng-model="service.os" ng-options="os.name for os in osList"></select>
-                <div class="taylor-Label">{{"service.numcpu" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" ng-model="service.cpu">
-                <div class="taylor-Label">{{"service.disk" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" ng-model="service.disk">
-                <div class="taylor-Label">{{"service.ram" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" ng-model="service.ram">
-                <div class="taylor-Label">{{"service.bandwidth" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" ng-model="service.bandwidth">
-                <div class="taylor-Label">{{"service.urldomain" | translate}}:</div>
-                <input type="text" class="taylor-TextBox" ng-model="service.domain">
-                <div class="taylor-Label">{{"service.cssskin" | translate}}:</div>
-                <select class="taylor-ListBox" ng-model="service.skin" ng-options="s.name for s in skinList"></select>
+    <div class="panel panel-default">
+        <div class="panel-heading">{{"service.title" | translate}}</div>
+        <div class="panel-body">
+
+            <div class="serviceDeploy">
+                <span class="mo_text">{{"service.deploy.title" | translate}}</span>
+                <button type="button" class="btn">{{"service.button.deploy" | translate}}</button>
+                <button type="button" class="btn">{{"service.button.test" | translate}}</button>
             </div>
-            <!--
-            <div class="rightPanel">
-                <span class="mo_text">Puppet Files</span>
-                <button type="button" class="crux-Button">Upload Puppet</button>
-                <input type="text" class="taylor-TextBox">
-                <span class="puppet-checkBox">
-                    <input type="checkbox" value="on" id="gwt-uid-1" tabindex="0">
-                    <label for="gwt-uid-1">Puppet File 1</label>
-                </span>
-                <span class="puppet-checkBox">
-                    <input type="checkbox" value="on" id="gwt-uid-2" tabindex="0">
-                    <label for="gwt-uid-2">Puppet File 2</label>
-                </span>
-                <span class="puppet-checkBox">
-                    <input type="checkbox" value="on" id="gwt-uid-3" tabindex="0">
-                    <label for="gwt-uid-3">Puppet File 3</label>
-                </span>
-                <button type="button" class="crux-Button">Remove Puppet</button>
+            <div class="serviceParameters">
+                <span class="mo_text">{{"service.params.title" | translate}}</span>
+                <div class="leftPanel">
+                    <div class="taylor-Label">{{"service.cloudnode" | translate}}:</div>
+                    <select class="taylor-ListBox" ng-model="service.cloudNode" ng-options="cloud.name for cloud in cloudNodeList"></select>
+                    <div class="taylor-Label">{{"service.os" | translate}}:</div>
+                    <select class="taylor-ListBox" ng-model="service.os" ng-options="os.name for os in osList"></select>
+                    <div class="taylor-Label">{{"service.numcpu" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" ng-model="service.cpu">
+                    <div class="taylor-Label">{{"service.disk" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" ng-model="service.disk">
+                    <div class="taylor-Label">{{"service.ram" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" ng-model="service.ram">
+                    <div class="taylor-Label">{{"service.bandwidth" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" ng-model="service.bandwidth">
+                    <div class="taylor-Label">{{"service.urldomain" | translate}}:</div>
+                    <input type="text" class="taylor-TextBox" ng-model="service.domain">
+                    <div class="taylor-Label">{{"service.cssskin" | translate}}:</div>
+                    <select class="taylor-ListBox" ng-model="service.skin" ng-options="s.name for s in skinList"></select>
+                </div>
+                <!--
+                <div class="rightPanel">
+                    <span class="mo_text">Puppet Files</span>
+                    <button type="button" class="crux-Button">Upload Puppet</button>
+                    <input type="text" class="taylor-TextBox">
+                    <span class="puppet-checkBox">
+                        <input type="checkbox" value="on" id="gwt-uid-1" tabindex="0">
+                        <label for="gwt-uid-1">Puppet File 1</label>
+                    </span>
+                    <span class="puppet-checkBox">
+                        <input type="checkbox" value="on" id="gwt-uid-2" tabindex="0">
+                        <label for="gwt-uid-2">Puppet File 2</label>
+                    </span>
+                    <span class="puppet-checkBox">
+                        <input type="checkbox" value="on" id="gwt-uid-3" tabindex="0">
+                        <label for="gwt-uid-3">Puppet File 3</label>
+                    </span>
+                    <button type="button" class="crux-Button">Remove Puppet</button>
+                </div>
+                -->
+                <br />
+                <button type="button" class="btn" ng-click="saveTemplate(service)">{{"service.button.save" | translate}}</button>
+                <button type="button" class="btn" ng-click="uploadTemplate(service)">{{"service.button.upload" | translate}}</button>
             </div>
-            -->
-            <br />
-            <button type="button" class="crux-Button" ng-click="saveTemplate(service)">{{"service.button.save" | translate}}</button>
-            <button type="button" class="crux-Button" ng-click="uploadTemplate(service)">{{"service.button.upload" | translate}}</button>
         </div>
     </div>
 </div>
