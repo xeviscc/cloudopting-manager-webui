@@ -1,7 +1,7 @@
 define(['app'],
     function(app) {
         app.factory('RestApi',
-            function ($http) {
+            function ($http, $log, Upload) {
                 'use strict';
 
                 var restBaseURI = "http://cloudopting1.cloudapp.net:8081/cloudopting/api";
@@ -155,6 +155,78 @@ define(['app'],
                     return instanceList;
                 };
 
+
+                restAPI.createApplication = function(name, description, files, callback) {
+                    if (files && files.length) {
+                        for (var i = 0; i < files.length; i++) {
+                            var file = files[i];
+                            Upload.upload({
+                                method: 'POST',
+                                headers: { 'Authorization' : 'Basic YWRtaW46YWRtaW4=' },
+                                url: restBaseURI + '/application/create',
+                                fields: {'name': name, 'description': description},
+                                file: file
+                            }).progress(function (evt) {
+                                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                                $log.debug('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                            }).success(function (data, status, headers, config) {
+                                callback(data);
+                                $log.debug('Application ID:  ' + data);
+                            });
+                        }
+                    }
+                };
+
+                restAPI.addContentLibrary = function (idApplication, libraryList, libraryName, callback) {
+                    if (libraryList && libraryList.length) {
+                        for (var i = 0; i < libraryList.length; i++) {
+                            var file = libraryList[i];
+                            Upload.upload({
+                                method: 'POST',
+                                headers: { 'Authorization' : 'Basic YWRtaW46YWRtaW4=' },
+                                url: restBaseURI + '/application/'+idApplication+'/contentlibrary',
+                                fields: { 'name' : libraryName},
+                                file: file
+                            }).progress(function (evt) {
+                                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                                $log.debug('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                            }).success(function (data, status, headers, config) {
+                                callback(data);
+                                $log.debug('file ' + config.file.name + 'uploaded. Response: ' + data);
+                            });
+                        }
+                    }
+                };
+
+                restAPI.deleteContentLibrary = function (idApplication, fileId) {
+                    return $http({
+                        method: 'DELETE',
+                        headers: { 'Authorization' : 'Basic YWRtaW46YWRtaW4=' },
+                        url: restBaseURI + '/application/'+idApplication+'/contentlibrary/'+fileId
+                    });
+                };
+
+                restAPI.addContentLibrary = function (toscaFile, idApplication) {
+                    Upload.upload({
+                        method: 'POST',
+                        headers: { 'Authorization' : 'Basic YWRtaW46YWRtaW4=' },
+                        url: restBaseURI + '/application/'+idApplication+'/toscafile',
+                        file: toscaFile
+                    }).progress(function (evt) {
+                        var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                        $log.debug('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                    }).success(function (data, status, headers, config) {
+                        $log.debug('file ' + config.file.name + 'uploaded. Response: ' + data);
+                    });
+                };
+
+                restAPI.requestPublication = function (idApplication) {
+                    return $http({
+                        method: 'POST',
+                        headers: { 'Authorization' : 'Basic YWRtaW46YWRtaW4=' },
+                        url: restBaseURI + '/application/'+idApplication+'/publish'
+                    });
+                };
 
                 /*************************************
                  *
@@ -488,6 +560,88 @@ define(['app'],
                         "status" : "Requested"
                     }
                 ];
+
+                var applicationTest = function() {
+                    //
+                    var appliactionJSON =
+                        '{' +
+                        '"id": 0,' +
+                        '"applicationMedias": [' +
+                        '{' +
+                        '"applicationId": "Applications",' +
+                        '"mediaContent": [ "" ],' +
+                        '"id": 0' +
+                        '}' +
+                        '],' +
+                        '"customizationss": [' +
+                        '{' +
+                        '"id": 0,' +
+                        '"applicationId": "Applications",' +
+                        '"statusId": {' +
+                        '"id": 0,' +
+                        '"applicationss": [' +
+                        '"Applications"' +
+                        '],' +
+                        '"customizationss": [' +
+                        '"Customizations"' +
+                        '],' +
+                        '"status": ""' +
+                        '},' +
+                        '"customizationToscaFile": "",' +
+                        '"customizationCreation": "",' +
+                        '"customizationActivation": "",' +
+                        '"customizationDecommission": "",' +
+                        '"username": ""' +
+                        '}' +
+                        '],' +
+                        '"statusId": {' +
+                        '"id": 0,' +
+                        '"applicationss": [' +
+                        '"Applications"' +
+                        '],' +
+                        '"customizationss": [' +
+                        '{' +
+                        '"id": 0,' +
+                        '"applicationId": "Applications",' +
+                        '"statusId": "Status",' +
+                        '"customizationToscaFile": "",' +
+                        '"customizationCreation": "",' +
+                        '"customizationActivation": "",' +
+                        '"customizationDecommission": "",' +
+                        '"username": ""' +
+                        '}' +
+                        '],' +
+                        '"status": ""' +
+                        '},' +
+                        '"userId": {' +
+                        '"createdBy": "",' +
+                        '"createdDate": "",' +
+                        '"lastModifiedBy": "",' +
+                        '"lastModifiedDate": "",' +
+                        '"id": 0,' +
+                        '"login": "",' +
+                        '"firstName": "",' +
+                        '"lastName": "",' +
+                        '"email": "",' +
+                        '"activated": false,' +
+                        '"langKey": "",' +
+                        '"activationKey": ""' +
+                        '},' +
+                        '"applicationName": "",' +
+                        '"applicationDescription": "",' +
+                        '"applicationToscaTemplate": "",' +
+                        '"applicationVersion": ""' +
+                        '}';
+
+                    var applicationObject = JSON.parse(appliactionJSON);
+
+                    applicationObject.applicationName = $scope.name;
+                    applicationObject.applicationDescription = $scope.description;
+                    applicationObject.applicationToscaTemplate = $scope.files[0];
+
+                    $log.debug(JSON.stringify(applicationObject));
+
+                };
 
                 return restAPI;
 

@@ -1,68 +1,50 @@
 define(
     [
-        'app'
+        'app',
+        'services/rest-api-wrap'
     ],
     function(app) {
         app.controller('PublishServiceCtrl',
-            ['$scope', '$state', '$log', 'Upload',
-                function ($scope, $state, $log, Upload) {
+            ['$scope', '$state', '$log', 'RestApi',
+                function ($scope, $state, $log, RestApi) {
                     'use strict';
 
                     /*
                      * WIZARD - SCREEN ONE
                      */
-                    /*
-                     $scope.$watch('files', function () {
-                     $scope.bk_files = $scope.files;
-                     //$scope.upload($scope.files);
-                     });
+                    /**
+                     * Function to create an application with a 'name', 'description' and 'promoImage'
+                     * with status 'Draft'
                      */
-
-
-                    var uploadImage = function () {
-                        if ($scope.files && $scope.files.length) {
-                            for (var i = 0; i < $scope.files.length; i++) {
-                                var file = $scope.files[i];
-                                Upload.upload({
-                                    url: 'upload/url',
-                                    fields: {'name': $scope.name, 'description': $scope.description},
-                                    file: file
-                                }).progress(function (evt) {
-                                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-                                }).success(function (data, status, headers, config) {
-                                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-                                });
-                            }
-                        }
-                    };
-
                     $scope.saveConfigurationWizardOne = function () {
-                        //Send file.
-                        uploadImage();
+
+                        var updateApplicationId = function(applicationId){
+                            $scope.idApplication = applicationId;
+                        };
+
+                        //Create
+                        RestApi.createApplication($scope.name, $scope.description, $scope.files, updateApplicationId);
                         //$log.info("Name: " + $scope.name);
                         //$log.info("Description: " + $scope.description);
                         //if($scope.files) $log.info("Filename: " + $scope.files[0].name);
 
-                        //testing application
-                        //applicationTest();
-
-
-
+                        //Move to Step 2 of wizard - Add content library
                         $state.go('publish2');
                     };
-
 
                     /*
                      * WIZARD - SCREEN TWO
                      */
-
                     $scope.libraryList = [];
+                    $scope.contentLib = null;
 
                     $scope.isLibraryEmpty = function() {
                         return $scope.libraryList.length==0;
                     };
 
+                    /**
+                     * Watch the contentLib to refresh the internal list of files that the user wants to upload.
+                     */
                     $scope.$watch(
                         function() {
                             return $scope.contentLib;
@@ -76,26 +58,17 @@ define(
                         true
                     );
 
-                    $scope.uploadContentLibrary = function () {
-                        if ($scope.libraryList && $scope.libraryList.length) {
-                            for (var i = 0; i < $scope.libraryList.length; i++) {
-                                var file = $scope.libraryList[i];
-                                Upload.upload({
-                                    url: 'upload/url',
-                                    file: file
-                                }).progress(function (evt) {
-                                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
-                                }).success(function (data, status, headers, config) {
-                                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
-                                });
-                            }
-                        }
-                    };
-
+                    /**
+                     * Function to save the content files added by the user
+                     */
                     $scope.saveConfigurationWizardTwo = function () {
-                        //Send files.
-                        $scope.uploadContentLibrary();
+                        var updateLibraryId = function(data) {
+                            //TODO: Update the corresponding file with the correspongind id to keep track.
+
+                        }
+                        //Add content libraries
+                        RestApi.addContentLibrary($scope.libraryList, $scope.idApplication, $scope.libraryName, updateLibraryId);
+
                         /*
                          if ($scope.libraryList && $scope.libraryList.length) {
                          for (var i = 0; i < $scope.libraryList.length; i++) {
@@ -104,135 +77,47 @@ define(
                          }
                          }
                          */
+
+                        //Move to Step 3 of wizard - Add TOSCA Archive
                         $state.go('publish3');
                     };
 
-
-                    /*
-                     $scope.$watch('contentLib', function () {
-                     if($scope.contentLib !== undefined && $scope.contentLib !== null) {
-                     $scope.contentLib = $scope.contentLib.slice().concat($scope.contentLib_bkp).concat($scope.contentLib.slice());
-                     }
-                     //$scope.upload($scope.files);
-                     });
+                    /**
+                     * Function to delete a specific file of the user.
+                     * @param file
                      */
-
-                    $scope.getContentLibrary = function (){
-                        $scope.cFiles = $scope.contentLib;
-
-                    };
-
                     $scope.deleteLib = function (file){
                         console.log("delete " + file.name);
                         var index = $scope.libraryList.indexOf(file);
                         if (index > -1) {
                             $scope.libraryList.splice(index, 1);
                         }
+                        //Send a REST call if it is already persisted in database.
+                        RestApi.deleteContentLibrary($scope.idApplication, file);
                     };
-
 
                     /*
                      * WIZARD - SCREEN THREE
                      */
+                    $scope.toscaFiles = [];
 
-
-                    $scope.aveConfiguration = function () {
-                        //Do not move. Stay.
-
+                    /**
+                     * Function to send the TOSCA Archive to be saved.
+                     */
+                    $scope.saveConfiguration = function () {
+                        //Send the tosca file
+                        RestApi.addToscaFile($scope.toscaFiles[0], $scope.idApplication);
                     };
 
-
+                    /**
+                     * Function to request the publication of the current application.
+                     */
                     $scope.publishService = function () {
                         console.log($scope.contentLib);
+
+                        //Request publication
+                        RestApi.requestPublication($scope.idApplication);
                     };
-
-
-                    var applicationTest = function() {
-                        //
-                        var appliactionJSON =
-                            '{' +
-                                '"id": 0,' +
-                                '"applicationMedias": [' +
-                                    '{' +
-                                        '"applicationId": "Applications",' +
-                                        '"mediaContent": [ "" ],' +
-                                        '"id": 0' +
-                                    '}' +
-                                '],' +
-                                '"customizationss": [' +
-                                    '{' +
-                                        '"id": 0,' +
-                                        '"applicationId": "Applications",' +
-                                        '"statusId": {' +
-                                            '"id": 0,' +
-                                            '"applicationss": [' +
-                                                '"Applications"' +
-                                            '],' +
-                                            '"customizationss": [' +
-                                                '"Customizations"' +
-                                            '],' +
-                                            '"status": ""' +
-                                        '},' +
-                                        '"customizationToscaFile": "",' +
-                                        '"customizationCreation": "",' +
-                                        '"customizationActivation": "",' +
-                                        '"customizationDecommission": "",' +
-                                        '"username": ""' +
-                                    '}' +
-                                '],' +
-                                '"statusId": {' +
-                                    '"id": 0,' +
-                                    '"applicationss": [' +
-                                        '"Applications"' +
-                                    '],' +
-                                    '"customizationss": [' +
-                                        '{' +
-                                            '"id": 0,' +
-                                            '"applicationId": "Applications",' +
-                                            '"statusId": "Status",' +
-                                            '"customizationToscaFile": "",' +
-                                            '"customizationCreation": "",' +
-                                            '"customizationActivation": "",' +
-                                            '"customizationDecommission": "",' +
-                                            '"username": ""' +
-                                        '}' +
-                                    '],' +
-                                    '"status": ""' +
-                                '},' +
-                                '"userId": {' +
-                                    '"createdBy": "",' +
-                                    '"createdDate": "",' +
-                                    '"lastModifiedBy": "",' +
-                                    '"lastModifiedDate": "",' +
-                                    '"id": 0,' +
-                                    '"login": "",' +
-                                    '"firstName": "",' +
-                                    '"lastName": "",' +
-                                    '"email": "",' +
-                                    '"activated": false,' +
-                                    '"langKey": "",' +
-                                    '"activationKey": ""' +
-                                '},' +
-                                '"applicationName": "",' +
-                                '"applicationDescription": "",' +
-                                '"applicationToscaTemplate": "",' +
-                                '"applicationVersion": ""' +
-                            '}';
-
-                        var applicationObject = JSON.parse(appliactionJSON);
-
-                        applicationObject.applicationName = $scope.name;
-                        applicationObject.applicationDescription = $scope.description;
-                        applicationObject.applicationToscaTemplate = $scope.files[0];
-
-                        $log.debug(JSON.stringify(applicationObject));
-
-                    };
-
-
-
-
-
                 }
             ]
         );
