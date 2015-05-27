@@ -1,4 +1,4 @@
-<div class="fixedWidth">
+<div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
         <div class="panel-heading">{{"publish.title" | translate}}</div>
         <div class="panel-body">
@@ -12,12 +12,22 @@
                 </div>
                 <div class="form-group row" ng-hide="isLibraryEmpty()">
                     <label>{{"publish.content.library" | translate}}</label>
-                    <div class="input-group" ng-repeat="content in libraryList">
-                        <input class="form-control" type="text" autocomplete="off" value="{{content.name}}" disabled/>
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-danger" ng-click="deleteLib(content)" >{{"publish.delete.item" | translate}}</button>
-                        </span>
+                    <div  ng-repeat="content in libraryList">
+                        <div class="input-group">
+                            <span class="input-group-addon">Name</span>
+                            <input class="form-control" type="text" autocomplete="off"/>
+                            <!--<span class="input-group-addon">Description</span>
+                            <input class="form-control" type="text" autocomplete="off"/>
+                        </div>
+                        <div class="input-group">-->
+                            <span class="input-group-addon">File</span>
+                            <input class="form-control" type="text" autocomplete="off" value="{{content.name}}" disabled/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-danger" ng-click="deleteLib(content)" >{{"publish.delete.item" | translate}}</button>
+                            </span>
+                        </div>
                     </div>
+
                 </div>
                 <button type="button" class="btn btn-primary" ng-click="saveConfigurationWizardTwo()">{{"publish.button.save_n_next" | translate}}</button>
             </form>

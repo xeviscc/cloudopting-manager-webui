@@ -1,4 +1,4 @@
-<div class="fixedWidth">
+<div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
         <div class="panel-heading">{{"service.title" | translate}}</div>
         <div class="panel-body">
@@ -28,26 +28,6 @@
                     <div class="taylor-Label">{{"service.cssskin" | translate}}:</div>
                     <select class="taylor-ListBox" ng-model="service.skin" ng-options="s.name for s in skinList"></select>
                 </div>
-                <!--
-                <div class="rightPanel">
-                    <span class="mo_text">Puppet Files</span>
-                    <button type="button" class="crux-Button">Upload Puppet</button>
-                    <input type="text" class="taylor-TextBox">
-                    <span class="puppet-checkBox">
-                        <input type="checkbox" value="on" id="gwt-uid-1" tabindex="0">
-                        <label for="gwt-uid-1">Puppet File 1</label>
-                    </span>
-                    <span class="puppet-checkBox">
-                        <input type="checkbox" value="on" id="gwt-uid-2" tabindex="0">
-                        <label for="gwt-uid-2">Puppet File 2</label>
-                    </span>
-                    <span class="puppet-checkBox">
-                        <input type="checkbox" value="on" id="gwt-uid-3" tabindex="0">
-                        <label for="gwt-uid-3">Puppet File 3</label>
-                    </span>
-                    <button type="button" class="crux-Button">Remove Puppet</button>
-                </div>
-                -->
                 <br />
                 <button type="button" class="btn" ng-click="saveTemplate(service)">{{"service.button.save" | translate}}</button>
                 <button type="button" class="btn" ng-click="uploadTemplate(service)">{{"service.button.upload" | translate}}</button>

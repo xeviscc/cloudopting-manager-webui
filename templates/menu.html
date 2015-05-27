@@ -1,30 +1,31 @@
-<!-- INIT NAVIGATION -->
 <!-- MENU FOR DEVELOPMENT -->
-<div class="container" ng-controller="IndexCtrl">
+<div class="container" ng-show="logoutButton" ng-controller="IndexCtrl">
     <div class="masthead">
         <ul class="nav nav-pills">
-            <li ng-hide="logoutButton"><a ui-sref="login">Login</a></li>
-            <li ng-hide="logoutButton"><a ui-sref="register">Register</a></li>
-            <li ng-show="logoutButton"><a ui-sref="detail">Service Detail</a></li>
-            <li ng-show="logoutButton"><a ui-sref="publish">Publish Service</a></li>
-            <li ng-show="logoutButton"><a ui-sref="serviceCatalogList">Service Catalog List</a></li>
-            <li ng-show="logoutButton"><a ui-sref="subscribeServiceTaylorForm">Subscribe Service - Taylor Form</a></li>
-            <li ng-show="logoutButton"><a ui-sref="serviceSubscriberOperate">Service Subscriber. Operate</a></li>
-            <li ng-show="logoutButton"><a ui-sref="instances">Instances Service Catalog - Manager</a></li>
-            <li ng-show="logoutButton"><a ui-sref="servicesCatalog">Services Catalog - Manager</a></li>
-            <li ng-show="logoutButton"><a ui-sref="serviceAddDeployForm">Service Add Deploy Form</a></li>
-            <li ng-show="logoutButton"><input type="button" ng-click="logout()" value="Logout" /></li>
-            <li ng-show="logoutButton">Name: {{name}}</li>
+            <li><a ui-sref="detail">Service Detail</a></li>
+            <li><a ui-sref="publish">Publish Service</a></li>
+            <li><a ui-sref="serviceCatalogList">Service Catalog List</a></li>
+            <li><a ui-sref="subscribeServiceTaylorForm">Subscribe Service - Taylor Form</a></li>
+            <li><a ui-sref="serviceSubscriberOperate">Service Subscriber. Operate</a></li>
+            <li><a ui-sref="instances">Instances Service Catalog - Manager</a></li>
+            <li><a ui-sref="servicesCatalog">Services Catalog - Manager</a></li>
+            <li><a ui-sref="serviceAddDeployForm">Service Add Deploy Form</a></li>
         </ul>
     </div>
+    <hr>
 </div>
-<!-- END NAVIGATION -->
+<!-- MENU FOR DEVELOPMENT -->
 
 <!-- INIT NAVIGATION -->
 <div class="container" ng-controller="IndexCtrl">
     <div class="masthead">
         <ul class="nav nav-pills">
+            <li ng-hide="logoutButton" class="pull-right"><a ui-sref="login">Login</a></li>
+            <li ng-hide="logoutButton" class="pull-right"><a ui-sref="register">Register</a></li>
             <li ng-show="isPublisher()"><a ui-sref="servicesCatalog">Dashboard</a></li>
+            <span ng-show="logoutButton" class="pull-right"><a href="#" ng-click="logout()">Logout</a></span>
+            <br/>
+            <span ng-show="logoutButton" class="pull-right"><label>Name:</label> {{name}}</span>
         </ul>
     </div>
 </div>
