@@ -1,11 +1,15 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-4 col-md-offset-4">
     <div class="panel panel-default">
         <div class="panel-heading">{{"register.title" | translate}}</div>
         <div class="panel-body">
-            <form novalidate class="simple-form">
-                {{ "register.name" | translate}}: <input ng-model="user.name" /><br />
-                {{ "register.password" | translate}}: <input type="password" ng-model="user.password" /><br />
-                {{ "register.repeatpassword" | translate}}: <input type="password" ng-model="user.password_two" /><br />
+            <form novalidate class="form-group">
+                <label>{{ "register.name" | translate}}</label>
+                <input class="form-control" type="text" autocomplete="off" ng-model="user.name" />
+                <label>{{ "register.password" | translate}}</label>
+                <input class="form-control" type="password" autocomplete="off" ng-model="user.password" />
+                <label>{{ "register.repeatpassword" | translate}}</label>
+                <input class="form-control" type="password" autocomplete="off" ng-model="user.password_two" />
+                <br />
                 <!--
                 {{ "register.role" | translate}}:
                 <select>
@@ -14,12 +18,11 @@
                     </option>
                 </select>
                 -->
-                <br />
-                <input type="submit" ng-click="register(user)" value="{{ 'register.button' | translate}}" />
+                <input class="btn btn-primary" type="submit" ng-click="register(user)" value="{{ 'register.button' | translate}}" />
                 <!-- CAPTCHA VALIDATOR -->
             </form>
             <br />
-            <div style="background-color: red">
+            <div ng-show="error" class="alert alert-danger" role="alert">
                 {{error}}
             </div>
             <br />

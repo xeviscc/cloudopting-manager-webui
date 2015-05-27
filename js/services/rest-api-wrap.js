@@ -163,7 +163,7 @@ define(['app'],
                             Upload.upload({
                                 method: 'POST',
                                 headers: { 'Authorization' : 'Basic YWRtaW46YWRtaW4=' },
-                                url: restBaseURI + '/application/create',
+                                url: restBaseURI + '/application',
                                 fields: {'name': name, 'description': description},
                                 file: file
                             }).progress(function (evt) {
@@ -210,7 +210,7 @@ define(['app'],
                     Upload.upload({
                         method: 'POST',
                         headers: { 'Authorization' : 'Basic YWRtaW46YWRtaW4=' },
-                        url: restBaseURI + '/application/'+idApplication+'/toscafile',
+                        url: restBaseURI + '/application/'+idApplication+'/tosca',
                         file: toscaFile
                     }).progress(function (evt) {
                         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);

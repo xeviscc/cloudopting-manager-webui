@@ -1,15 +1,17 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-4 col-md-offset-4">
     <div class="panel panel-default">
         <div class="panel-heading">{{"login.title" | translate}}</div>
         <div class="panel-body">
-            <form novalidate class="simple-form">
-                {{ 'login.name' | translate}}: <input ng-model="user.name" /><br />
-                {{ 'login.password' | translate}}: <input type="password" ng-model="user.password" /> <br />
+            <form novalidate class="form-group">
+                <label>{{ 'login.name' | translate}}</label>
+                <input class="form-control" type="text" autocomplete="off" ng-model="user.name" />
+                <label>{{ 'login.password' | translate}}</label>
+                <input class="form-control" type="password" autocomplete="off" ng-model="user.password" />
                 <br />
-                <input type="submit" ng-click="login(user)" value="{{ 'login.button' | translate}}" />
+                <input class="btn btn-primary" type="submit" ng-click="login(user)" value="{{ 'login.button' | translate}}" />
             </form>
             <br />
-            <div style="background-color: red">
+            <div ng-show="error" class="alert alert-danger" role="alert">
                 {{error}}
             </div>
         </div>
